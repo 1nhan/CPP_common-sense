@@ -1,8 +1,28 @@
 네 가지 주요 오류 유형을 이름 짓고 간단히 정의하시오.
+<details><summary></summary>
+
+</details>
+
 학생 프로그램에서 무시할 수 있는 오류의 종류는 무엇인가?
+<details><summary></summary>
+
+</details>
+
 모든 완성된 프로젝트가 제공해야 하는 보장은 무엇인가?
+<details><summary></summary>
+
+</details>
+
 프로그램의 오류를 제거하고 적절한 소프트웨어를 만들기 위해 취할 수 있는 세 가지 접근법을 나열하시오.
+<details><summary></summary>
+
+</details>
+
 우리가 디버깅(debugging)을 싫어하는 이유는 무엇인가?
+<details><summary></summary>
+
+</details>
+
 문법 오류(Syntax error)란 무엇인가? 다섯 가지 예를 제시하시오.
 <details><summary></summary>
 

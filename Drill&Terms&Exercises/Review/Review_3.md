@@ -111,30 +111,41 @@ string에 할 수 있지만 int에는 할 수 없는 작업은 무엇인가요?
 벡터의 모든 요소를 출력하는 for 루프는 어떻게 작성하나요?
 <details><summary></summary>
 
+```cpp
+int n = -1;
+cin>>n;
+vector<int>number(n);	
+for(int x : number)cout<<number[x]<<' '; // number벡터에 대해 순차적으로 x가 출력이 가능하고 이경우 인덱스 접근이 불가능하다.
+for(int x = 0 ; x<number )
+```
+
 </details>
 
 vector<char> alphabet(26);는 무엇을 하나요?
 <details><summary></summary>
-
+char형의 크기 26짜리 내용이 빈 벡터이다.
 </details>
 
 push_back()은 벡터에 어떤 동작을 하나요?
 <details><summary></summary>
-
+벡터의 사이즈를 한칸 넓히고 항상 벡터의 가장 마지막에 ()에 
+해당하는 수를 저장할 수 있게된다. 
 </details>
 
 벡터의 size() 멤버 함수는 무엇을 하나요?
 <details><summary></summary>
-
+벡터의 크기를 반환한다. <br>
+vector<int>number_int(50); <br>
+number_int.size() // 는 50이다.
 </details>
 
 벡터가 인기 있고 유용한 이유는 무엇인가요?
 <details><summary></summary>
-
+push_back()함수를 통해 손쉽게 함수의 size 가장 뒷자리에 내용을 추가할 수 있다.
 </details>
 
 벡터의 요소를 정렬하려면 어떻게 해야 하나요?
 <details><summary></summary>
-
+알고리즘의 sort()함수를 이용해서 오름차순 정렬을 사용할 수 있다.
 </details>
 
