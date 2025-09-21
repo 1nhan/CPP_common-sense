@@ -15,7 +15,7 @@ while (not_finished) {
 ----------------------------------------------------------------
 
 
-토큰(token) : 은 숫자나 연산자처럼 우리가 한 단위(unit)로 간주하는 문자들의 연속이다. 
+[토큰(token)](https://learn.microsoft.com/ko-kr/cpp/cpp/character-sets?view=msvc-170) : 은 숫자나 연산자처럼 우리가 한 단위(unit)로 간주하는 문자들의 연속이다. 
 어떤 형태로든 “토큰화”는 텍스트 분석(text analysis)이 시작되는 일반적인 방식이다.
 토큰을 (kind,value) 쌍으로 나타내는 것
 
