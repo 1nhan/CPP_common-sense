@@ -1,23 +1,45 @@
 /************************************************************************
 *
-*	 Drill 
-*	이 연습은 단계별로 진행하며, 각 단계에서 최소 3쌍 이상의 값을 테스트해야 합니다.
-*	[1]while 루프를 사용해 두 개의 int를 입력받고 출력. ‘|’입력시 종료
-*	[2]더 작은 값과 더 큰 값을 각각 출력
-*	[3]두 값이 같을 경우 "the numbers are equal" 출력
-*	[4]int 대신 double 사용
-*	[5]두 값의 차이가 1.0/100보다 작으면 "numbers are almost equal" 출력
-*	[6]한 번에 하나의 double 입력. 지금까지 본 가장 작은/큰 값 추적 및 출력
-*	[7]단위(unit)를 함께 입력: cm, m, in, ft 허용. 
-*	변환 기준: 1m=100cm, 1in=2.54cm, 1ft=12in
-*	[8]단위가 없거나 잘못된 단위(y, yard, meter, km, gallons)는 거부
-*	[9]입력된 값의 합계, 최소값, 최대값, 개수 출력. 합계는 meter 기준
-*	[10]입력된 모든 값을 meter로 변환하여 vector에 저장
-*	[11]벡터를 정렬한 후 값들을 출력 (오름차순)
-* 
-*	Drill 연습에서 수열의 최댓값과 최솟값을 찾는 프로그램을 작성했습니다. 
 *	수열에서 가장 많이 등장하는 값은 최빈값(mode)이라고 합니다. 
 *	양의 정수 집합에서 최빈값을 찾는 프로그램을 작성하세요.
 *	
 *************************************************************************/
+#include <algorithm>
 import std;
+using namespace std;
+
+int main(void)
+{
+	int number = -1;
+
+	/*양의 정수 벡터 생성*/
+	vector<int>posit_int;
+	while (cin >> number)
+	{
+		if (number < 0) cout << "오직 양의 정수만 입력가능합니다." << '\n';
+		posit_int.push_back(number);
+	}
+	/*양의 정수 벡터 생성 끝*/
+
+	/*최빈도(count)와 최빈값(mode) 변수 생성후 초기화*/
+	int count = 0; 
+	int max_count = count;
+	int number = posit_int[0];
+	int mode = number;
+
+
+	/*최빈도, 최빈값 축출*/
+	for (int x = 1; x < posit_int.size(); ++x)
+	{
+		if(posit_int[x-1] == posit_int[x]) ++count;
+		if (posit_int[x - 1] != posit_int[x])
+		{
+			max_count = count;
+			number = posit_int[x];
+		}
+		mode = number;
+	}
+	
+	
+	return 0;
+}

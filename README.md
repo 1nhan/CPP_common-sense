@@ -4,4 +4,4 @@
 > C++를 공부했고 최근 Programming Principles and Practice Using C++ (BJARNE STROUSTRUPTHE CREATOR OF C++)를 공부하고 있습니다.
 > 현재 리파지토리는 PPP에 대한 예제와 정리된 내용을 업로드할 예정입니다. 부족한 내용이나 아쉬운 내용에 대해서는 Microsoft Learn(CPP)에서 추가된 내용을 업로드하겠습니다.
 
-관련 책 : [Programming Principles and Practice Using C++ (BJARNE STROUSTRUPTHE CREATOR OF C++)](https://www.stroustrup.com/programming.html)
+관련 책 : [Programming Principles and Practice Using C++](https://www.stroustrup.com/programming.html)
