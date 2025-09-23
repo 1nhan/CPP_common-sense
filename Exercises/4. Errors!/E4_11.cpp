@@ -5,3 +5,21 @@
 	int로 표현 가능한 가장 큰 피보나치 수를 찾으시오.
 *
 *************************************************************************/
+
+#include <algorithm>
+import std;
+using namespace std;
+//(int > 2'147'483'647 || int < -2'147'483'648)
+vector<int>Fibonacci_series = { 1,1 };
+
+int Fibonacci_Function(int n)
+{
+}
+
+int main(void)
+{
+	int N = -1;
+	cin >> N;
+	
+	Fibonacci_Function(N);
+}
