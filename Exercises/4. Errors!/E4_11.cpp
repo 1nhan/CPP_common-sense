@@ -10,16 +10,28 @@
 import std;
 using namespace std;
 //(int > 2'147'483'647 || int < -2'147'483'648)
-vector<int>Fibonacci_series = { 1,1 };
-
-int Fibonacci_Function(int n)
+bool find_maxint(double maxi)
 {
+	return maxi >= INT32_MIN && maxi <= INT32_MAX;
 }
 
 int main(void)
 {
+	vector<double>Fibonacci_series = { 1,1 };
 	int N = -1;
+	double max_integer = -1;
 	cin >> N;
 	
-	Fibonacci_Function(N);
+	for (int x = 1; x <= N; ++x)
+		Fibonacci_series.push_back((Fibonacci_series[x] + Fibonacci_series[x - 1]));
+
+	for (int x = 0; x < N; ++x)
+		if (find_maxint(Fibonacci_series[x]))
+		{
+			cout << Fibonacci_series[x] << '\n';
+			if (max_integer < Fibonacci_series[x])max_integer = Fibonacci_series[x];
+		}
+	cout << "int로 표현 가능한 가장 큰 피보나치 수 = " << max_integer << '\n';
+
+	return 0;
 }
