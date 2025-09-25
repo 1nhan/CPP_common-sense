@@ -17,6 +17,7 @@
 	이 n은 시드(seed)라 불리며, 서로 다른 시드는 서로 다른 난수 시퀀스를 생성한다.
 * 
 *************************************************************************/
+
 #include<algorithm>
 import std;
 using namespace std;
@@ -24,52 +25,80 @@ using namespace std;
 /* 게임의 룰 4개의 숫자만을 rule_is_four로 정의 */
 constexpr int rule_is_four = 4;	
 
-// 정답이 1234이고 사용자가 1359를 입력하면, 출력은 “1 bull and 1 cow”가 되어야 한다.
-int Bulls(vector<int>cinput,vector<int>uinput)
+/*벡터 size에 대한 유효성 검사*/
+bool Is_Size_Four(vector<int> computer_para_input, vector<int> user_para_input)
 {
-	int bull = 0;
-	for (int x = 0; x < rule_is_four; ++x)
-		if (cinput[x] == uinput[x]) ++bull;
-	return bull;
-}
-int cows(vector<int>cinput,vector<int>uinput)
-{
-	int cow = 0;
-	for (int x = 0; x < rule_is_four; ++x)
-		for (int y = 0; y < rule_is_four; ++y)
-			if (cinput[x]!=uinput[x]&&cinput[x] == uinput[y]) ++cow;
-	return cow;
+	if (computer_para_input.size() > 4 || user_para_input.size() > 4)
+	{
+		cout << "인덱스 범위를 초과했습니다. 프로그램을 재시작해주세요." << '\n';
+		return false;
+	}
+	return true;
 }
 
+/*Bulls 함수*/
+int Bulls(vector<int> computer_para_input, vector<int> user_para_input)
+{
+	int bull = 0;
+	Is_Size_Four(computer_para_input, user_para_input);
+	for (int x = 0; x < rule_is_four; ++x)
+		if (computer_para_input[x] == user_para_input[x]) ++bull;
+	return bull;
+}
+/*Cows 함수*/
+int Cows(vector<int> computer_para_input, vector<int> user_para_input)
+{
+	int cow = 0;
+	Is_Size_Four(computer_para_input, user_para_input);
+	if (computer_para_input.size() > 4 || user_para_input.size() > 4) return 0;
+	for (int x = 0; x < rule_is_four; ++x)
+		for (int y = 0; y < rule_is_four; ++y)
+			if (computer_para_input[x] != user_para_input[x] &&
+				computer_para_input[x] == user_para_input[y]) ++cow;
+	return cow;
+}
+/*Bulls and Cows 함수 끝*/
 
 int main(void)
 {
 	cout << "“Bulls and Cows”" << '\n';
-	/*균등분포를 이용한 컴퓨터인풋 vector 생성 */
+
+	/*균등분포를 이용한 컴퓨터벡터 vector 선언 */
 	default_random_engine engine;				//기본 난수 생성기 engine객체
 	uniform_int_distribution<int> dist(0, 9);	//0-9까지 균등하게 분포되게 반환
-	vector<int>computer_input;					//변수 computer_input 선언
-	int u_input = -1;
-	vector<int>user_input;
+	vector<int>computer_vector;					//변수 computer_input 선언
+
+	/* 유저벡터 vector 선언 */
+	int user_input = -1;
+	vector<int>user_vector;
 	
-	for (int x = 0; x < rule_is_four; ++x)		//백터에 기본난수생성기를 이용해 (0-9까지)균등하게 담기.
+	while(computer_vector.size()<=4)				//백터에 기본난수생성기를 이용해 (0-9까지)균등하게 담기.
 	{	
-		computer_input.push_back(dist(engine));
+		computer_vector.push_back(dist(engine));
 	}
 
-	/* u_input입력후 벡터 user_input에 저장*/
-	cout << "네개의 수를 입력하세요" << '\n';
-	while (cin >> u_input)
+	for (int x = 0; x < rule_is_four; ++x)
 	{
-		user_input.push_back(u_input);
-		
-		/*user_input의 크기가 4일때부터 비교*/
-		if(user_input.size()==4)
-			if (Bulls(computer_input, user_input) != 4)
-				cout << "“"		<< Bulls(computer_input, user_input) 
-				<< "bull and "	<< cows(computer_input, user_input) 
+		cout << computer_vector[x];
+	}
+	cout << '\n';
+	/* user_input입력후 벡터 user_vector에 저장*/
+	cout << "네개의 수를 입력하세요" << '\n';
+	while(cin>> user_input)
+	{
+		user_vector.push_back(user_input);
+		/*user_vector의 크기가 4일때부터 비교*/
+		if (user_vector.size() == 4)
+		{
+			if (Bulls(computer_vector, user_vector) != 4)
+			{
+				cout << "“"		<< Bulls(computer_vector, user_vector)
+				<< "bull and "	<< Cows(computer_vector, user_vector)
 				<< "cow”" << '\n';
-			else { cout <<"정답!!!!!" << '\n'; return 0; }
+				user_vector.clear();
+			}
+			else { cout <<"4Bulls. GAME OVER" << '\n'; return 0; }
+		}
 	}
 }
 
