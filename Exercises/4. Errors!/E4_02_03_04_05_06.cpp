@@ -42,7 +42,6 @@
 import std;
 using namespace std;
 
-
 void error(double n)
 {
 	cout << "error!" << '\n';
