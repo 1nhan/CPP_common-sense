@@ -1,15 +1,26 @@
 네 가지 주요 오류 유형을 이름 짓고 간단히 정의하시오.
 <details><summary></summary>
 
+Compile Errors
+<br>
+Link-Time-Errors
+<br>
+Run-Time-Errors
+<br>
+Range-Errors
+<br>
+
 </details>
 
 학생 프로그램에서 무시할 수 있는 오류의 종류는 무엇인가?
 <details><summary></summary>
 
+
 </details>
 
 모든 완성된 프로젝트가 제공해야 하는 보장은 무엇인가?
 <details><summary></summary>
+
 
 </details>
 
