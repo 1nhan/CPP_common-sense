@@ -391,10 +391,45 @@ const 참조에 의한 전달(pass-by-const-reference)은 언제 사용해야 �
 <br>
 <br>
 <br>
-<br>
-
 
 ----------------------------------------------------------------
+### Technicalities: Functions, etc.
+#### Declarations and definitions (선언과 정의)
+#### Scope (범위)
+#### Function call and return (함수 호출과 반환)
+인자 및 반환 타입 선언(Declaring arguments and return type)
+<br>
+값 반환(Returning a value)
+<br>
+값에 의한 전달(Pass-by-value)
+<br>
+const 참조에 의한 전달(Pass-by-const-reference)
+<br>
+참조에 의한 전달(Pass-by-reference)
+<br>
+값 전달 vs. 참조 전달(Pass-by-value vs. pass-by-reference)
+<br>
+인자 검사 및 변환(Argument checking and conversion)
+<br>
+함수 호출 구현(Function call implementation)
+<br>
+컴파일 시 계산(Compile-time computation)
+<br>
+접미 반환 타입(Suffix return type)
+<br>
+<br>
+#### Order of evaluation (평가 순서)
+표현식 평가(Expression evaluation)
+<br>
+전역 초기화(Global initialization)
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
 ----------------------------------------------------------------
 ----------------------------------------------------------------
 ----------------------------------------------------------------
