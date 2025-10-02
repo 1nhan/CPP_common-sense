@@ -148,18 +148,12 @@ Expression과 Term에 대한 규칙도 유사하며, 각각 규칙과 토큰을 
 
 (17+4)/(5−1) 
 <br>
-17, 4, 5, 1은 모두 부동소수점 리터럴이며, Number -> Primary로 이어진다. 
+먼저 Expression은 Term을 찾는다. Term은 Primary을 찾고 Primary는 Number를 찾는다.
 <br>
-먼저 괄호를 발견하는데 Expression -> Term -> Primary를 통해 ()에 대한 평가를 한다.
+하지만 (는 Primary이고 이후 다시 
 <br>
-이후 괄호가 닫혀있는지 확인후 다시 Expression에서 17+4에 대한 덧셈을 진행하고 lval에 
-값을 할당한다.
 <br>
-/을 Expression -> Term에서 lval과 수행하게 되는데 (5-1)중 ()를 발견해서 다시
 <br>
-Expression -> Term -> Primary를 통해 ()에 대한 평가를 한다.
-<br>
-5-1을 Expression에서 진행한 뒤 rval에 할당한다. 
 <br>
 
 </details>

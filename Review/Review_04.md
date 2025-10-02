@@ -1,26 +1,15 @@
 네 가지 주요 오류 유형을 이름 짓고 간단히 정의하시오.
 <details><summary></summary>
 
-Compile Errors
-<br>
-Link-Time-Errors
-<br>
-Run-Time-Errors
-<br>
-Range-Errors
-<br>
-
 </details>
 
 학생 프로그램에서 무시할 수 있는 오류의 종류는 무엇인가?
 <details><summary></summary>
 
-
 </details>
 
 모든 완성된 프로젝트가 제공해야 하는 보장은 무엇인가?
 <details><summary></summary>
-
 
 </details>
 
@@ -67,6 +56,7 @@ Range-Errors
 입력 연산이 성공했는지 어떻게 테스트하는가?
 <details><summary></summary>
 
+!cin
 </details>
 
 함수 호출자가 런타임 오류(run-time error)를 처리하는 것과 피호출자가 처리하는 것을 비교·대조하시오.
@@ -76,6 +66,7 @@ Range-Errors
 
 예외(exception)를 던지는 것이 오류 값(error value)을 반환하는 것보다 바람직한 경우는 언제인가?
 <details><summary></summary>
+
 
 </details>
 
@@ -87,10 +78,36 @@ Range-Errors
 예외가 던져지고 잡히는 과정은 어떻게 되는가?
 <details><summary></summary>
 
+```
+#include <stdexcept>
+#include <string>
+
+void error(const std::string& msg) {
+    throw std::runtime_error(msg);
+}
+
+int main()
+try {
+    error("Something went wrong!");
+} catch (const std::runtime_error& e) {
+    std::cerr << "Caught error: " << e.what() << '\n';
+    // 복구 로직 or 안전 종료
+}
+
+```
 </details>
 
 벡터(vector) v에서 v[v.size()]가 범위 오류(range error)인 이유는 무엇이며, 이를 호출하면 어떤 결과가 발생하는가?
 <details><summary></summary>
+
+```
+v_elements ex. vector<int>v_elements={1,2,3,4}
+v_elements.size()=4;
+v_elements[0] = 1;
+v_elements[3] = 4;
+v_elements[4] = ;//out_of_ranges access <-range error
+_
+```
 
 </details>
 

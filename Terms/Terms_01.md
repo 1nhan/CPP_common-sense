@@ -1,0 +1,135 @@
+// : 주석(comment)을 시작하는 기호. 해당 줄의 나머지 부분은 컴파일러가 무시함.
+<details><summary></summary>
+
+</details>
+
+executable : 실행 파일. 컴파일과 링크 과정을 거쳐 생성된, 실제로 실행 가능한 프로그램 파일.
+<details><summary></summary>
+
+</details>
+
+main() : 모든 C++ 프로그램의 시작점(entry point)이 되는 함수.
+<details><summary></summary>
+
+</details>
+
+<< : 출력 연산자(output operator). 데이터를 출력 스트림에 전달할 때 사용.
+<details><summary></summary>
+
+</details>
+
+function : 함수. 이름이 붙은 명령 집합으로, 특정 작업을 수행함.
+<details><summary></summary>
+
+</details>
+
+object code : 오브젝트 코드. 컴파일된 기계어 코드로, 실행 파일 생성에 사용됨.
+<details><summary></summary>
+
+</details>
+
+C++ : 이 책에서 사용하는 프로그래밍 언어. 고성능과 추상화를 동시에 지원함.
+<details><summary></summary>
+
+</details>
+
+header file : 헤더 파일. 함수 선언과 상수 정의 등을 포함하며, #include로 불러옴.
+<details><summary></summary>
+
+</details>
+
+output : 출력. 프로그램이 사용자나 다른 시스템에 정보를 전달하는 행위.
+<details><summary></summary>
+
+</details>
+
+comment : 주석. 코드에 대한 설명을 작성하며, 컴파일러는 이를 무시함.
+<details><summary></summary>
+
+</details>
+
+IDE : 통합 개발 환경(Integrated Development Environment). 코드 작성, 컴파일, 디버깅 등을 하나의 인터페이스에서 수행할 수 있게 해줌.
+<details><summary></summary>
+
+</details>
+
+program : 프로그램. 컴퓨터가 수행할 수 있도록 작성된 명령 집합.
+<details><summary></summary>
+
+</details>
+
+compiler : 컴파일러. 소스 코드를 오브젝트 코드로 번역하는 도구.
+<details><summary></summary>
+
+</details>
+
+import : 모듈 가져오기 문장. 특정 모듈의 기능을 사용할 수 있도록 설정함.
+<details><summary></summary>
+
+</details>
+
+source code : 소스 코드. 사람이 읽을 수 있는 형태로 작성된 프로그램 코드.
+<details><summary></summary>
+
+</details>
+
+compile-time : 컴파일 시간. 컴파일러가 코드를 분석하고 번역하는 시점.
+<details><summary></summary>
+
+</details>
+
+error : 오류. 프로그램이 의도대로 작동하지 않게 만드는 문제.
+<details><summary></summary>
+
+</details>
+
+library : 라이브러리. 재사용 가능한 코드 집합으로, 다른 프로그램에서 호출 가능.
+<details><summary></summary>
+
+</details>
+
+statement : 문장. 프로그램 내에서 하나의 동작을 지정하는 코드 단위.
+<details><summary></summary>
+
+</details>
+
+cout : 표준 출력 스트림. 화면에 텍스트를 출력할 때 사용.
+<details><summary></summary>
+
+</details>
+
+linker : 링커. 여러 오브젝트 파일을 하나의 실행 파일로 결합하는 도구.
+<details><summary></summary>
+
+</details>
+
+module : 모듈. 기능을 캡슐화한 코드 집합으로, import를 통해 불러옴.
+<details><summary></summary>
+
+</details>
+
+#include : 헤더 포함 지시문. 외부 파일의 선언을 현재 코드에 포함시킴.
+<details><summary></summary>
+
+</details>
+
+std : 표준 네임스페이스(namespace). C++ 표준 라이브러리의 기능들이 정의된 공간.
+<details><summary></summary>
+
+</details>
+
+command line : 명령줄 인터페이스. 텍스트 기반으로 명령을 입력하고 실행하는 환경.
+<details><summary></summary>
+
+</details>
+
+bug : 버그. 프로그램 내의 오류 또는 결함.
+<details><summary></summary>
+
+</details>
+
+debugging : 디버깅. 버그를 찾아내고 수정하는 과정.
+<details><summary></summary>
+
+</details>
+
