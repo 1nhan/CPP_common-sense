@@ -50,7 +50,6 @@ Class
 ----------------------------------------------------------------------
  ∟ Evolving a class : Date 
 	∟ Struct and functions
-		∟ ex. date_struct_functions.cpp
 		∟ “이 타입에 어떤 연산이 필요할까?”
 		∟ date01_struct_and_functions.cpp
 
@@ -58,10 +57,10 @@ Class
  ∟ Evolving a class : Date 
 	∟ Member functions and constructors
 								∟ 초기화를 위한 편리한 문법 
-									∟ ex. Date last {2005, 12, 31};
-											∟ Date 생성자가 요구하는 인수를 변수 이름 뒤에 
-											{ } 리스트로 제공하며, 생성자를 요구하는 클래스 
-											변수 초기화에서 가장 일반적인 방식
+		∟ ex. Date last {2005, 12, 31};
+				∟ Date 생성자가 요구하는 인수를 변수 이름 뒤에 
+				{ } 리스트로 제공하며, 생성자를 요구하는 클래스 
+				변수 초기화에서 가장 일반적인 방식
 		∟ date02_member_functions_and_constructors.cpp
 
 ----------------------------------------------------------------------
@@ -144,11 +143,75 @@ Class
 
 ----------------------------------------------------------------------
  ∟ Class Interface
+	∟ 좋은 인터페이스란 무엇일까요? 
+	or좋은 공개 인터페이스와 엉망인 인터페이스를 구분하는 기준은 무엇일까요?
+	Keep interfaces complete.
+	(인터페이스를 완전하게 할 것)
+	Keep interfaces minimal. 
+	(인터페이스를 최소화 할 것)
+	Provide constructors. 
+	(생성자를 제공할 것)
+	Support copying (or prohibit it). 
+	(복사생성자를 지원할 것, (또는 금지할 것))
+	Use types to provide good argument checking.
+	(타입을 사용해서 좋은 argument를 체킹할 것)
+	Identify nonmodifying member functions. 
+	(nonmodifying(상태가 변하지 않아야)하는 멤버 함수를 식별할 것.)
+	Free all resources in the destructor. 
+	(destructor에서 모든 리소스를 Free할 것)
+	
+----------------------------------------------------------------------
+ ∟ Class Interface
 	∟ Argument types
+		∟ date06.cpp
+		∟열거자에 열거형 이름을 붙이는 방식
+		클래스, 열거형, 네임스페이스 이름 뒤에는 ::를, 객체 이름 뒤에는 .을 사용합니다 
+
+
+
+----------------------------------------------------------------------
+ ∟ Class Interface
 	∟ copying
+		∟ 객체를 복사할 수 있는가?
+		or어떻게 복사할 것인가?
+				  ∟ default behavior.
+						∟ 그렇다면 기본 복사 동작을 원하지 않는 
+						경우에는 어떻게 해야 할까요? 
+							∟ 이 경우에는 복사 생성자(copy constructor)와 
+							복사 대입 연산자(copy assignment operator)를 직접 정의하거나, 
+							복사 생성자와 복사 대입 연산자를 삭제(delete)할 수 있습니다
+
+----------------------------------------------------------------------
+ ∟ Class Interface
 	∟ Default constructors
+		∟ "empty"는 유용하지만 의미를 부여할 수 있는 생성자를 정의하는 것이 더 낫다.
+								∟ 멤버선언시 지정된 초기값은 default member initializer 또는
+								클래스 내 초기값 in-class initializer라고 한다.
+		∟ T type, T{} 기본값을 나타내는 표기, 기본 생성자에 의해 정의된다.
+
+	
+----------------------------------------------------------------------
+ ∟ Class Interface
 	∟ Const member functions
+		∟ 변경 불가능한 값, ←→ mutable 
+				↗modifying //변경하는 연산
+	클래스의 연산 
+				↘nonmodifying //변경하지 않는 연산
+		∟ 멤버함수 선언에서 인수목록 뒤에 const를 붙이면, 해당함수가 const객체에 대해
+		호출될 수 있음.
+		또 멤버함수를 const로 선언하면 컴파일러는 해당 객체를 수정하지 않겠다는 약속을
+		강제합니다.
+
+----------------------------------------------------------------------
+ ∟ Class Interface
 	∟ Member function and helping function
+							∟ 설계개념. convenience, auxiliary
+		∟ 인터페이스를 최소화(그러면서도 완전하게) 설계할 때, 
+		단지 “유용한” 연산들은 생략해야 합니다.
+
+
+----------------------------------------------------------------------
+ ∟ Class Interface
 	∟ The ISO standard
 
 
