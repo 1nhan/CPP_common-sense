@@ -92,15 +92,57 @@ Class
 ----------------------------------------------------------------------
  ∟ Evolving a class : Date 
 	∟ Refferring to the current object
+		∟ 어떻게 해당 객체를 구분할 수 있을까요?
+		클래스의 멤버 함수(member function), 호출된 객체를 식별하기 위한 
+		암시적 인수(implicit argument)를 가지고 있습니다.
+
 
 ----------------------------------------------------------------------
  ∟ Evolving a class : Date 
 	∟ Reporting errors
-----------------------------------------------------------------------
+	∟유효하지 않은 날짜를 발견했을 때 우리는 어떻게 해야 할까요?
+	or 코드의 어느 부분에서 유효하지 않은 날짜를 확인해야 할까요?
+	∟ 
 
 ----------------------------------------------------------------------
  ∟ Enumerations
+	∟ enum(열거형)
+	∟ 값의 집합(열거자, enumerator)을 기호 상수(symbolic constant)로 지정합니다.
+	∟ ex. ```cpp
+			enum class Month {
+				jan = 1, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec
+			};
+			```
+	∟ 열거형은 언제 사용할까요?
+	기본적으로, 열거형은 관련된 이름 있는 정수 상수 집합이 필요할 때 유용합니다. 
+	이는 대안의 집합(up, down; yes, no, maybe; on, off; n, ne, e, se, s, sw, w, nw)이나 
+	고유한 값(red, blue, green, yellow, maroon, crimson, black)을 표현할 때 자주 발생합니다.
+
+	∟"Plain" enumerations
+			∟ int로의 암시적 변환을 허용
+			∟ 원하지 않는 암시적 변환이 발생할 경우 오류
+			∟ enum class는 C++11에서 도입된 기능
+
+----------------------------------------------------------------------
  ∟ Operator Overloading
+	∟ 클래스나 열거형에 대해 C++의 거의 모든 연산자를 정의할 수 있습니다.
+	∟ ex. 순환하는 동작
+	
+	```
+	int to_int(Month m){
+		return static_cast<int>(m);
+	}
+
+	enum class Month {
+		jan = 1, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec
+	};
+
+	Month operator++(Month& m){
+		m = (m == Month::dec) ? Month::jan : Month{ to_int(m) + 1 };
+	}
+	```
+
+----------------------------------------------------------------------
  ∟ Class Interface
 	∟ Argument types
 	∟ copying
