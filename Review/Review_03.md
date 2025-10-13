@@ -1,151 +1,211 @@
-°è»ê(computation)ÀÌ¶õ ¹«¾ùÀÎ°¡¿ä?
+ï»¿### Review
+
+Computation
+ âˆŸ Computation
+ âˆŸ Objectives and tools
+ âˆŸ Expressions
+	âˆŸ Constant expressions
+	âˆŸ Operators
+ âˆŸ Statements
+	âˆŸ Selection
+	âˆŸ Iteration
+ âˆŸ Functions
+ âˆŸ vector
+ 
+ ----------------------------------------------------------------------
+ âˆŸ Computation
+	âˆŸ í”„ë¡œê·¸ëž¨ì´ ìˆ˜í–‰í•˜ëŠ” ëª¨ë“  ì¼ì€ ê³„ì‚°(compute)ìž…ë‹ˆë‹¤.
+	âˆŸ 
+	âˆŸ 
+
+ ----------------------------------------------------------------------
+ âˆŸ Objectives and tools
+	âˆŸ 
+	âˆŸ 
+	âˆŸ 
+
+ ----------------------------------------------------------------------
+ âˆŸ Expressions
+	âˆŸ Constant expressions
+	âˆŸ Operators
+
+ ----------------------------------------------------------------------
+ âˆŸ Statements
+	âˆŸ Selection
+		âˆŸ 
+		âˆŸ 
+		âˆŸ 
+	âˆŸ Iteration
+		âˆŸ 
+		âˆŸ 
+		âˆŸ
+		
+ ----------------------------------------------------------------------
+ âˆŸ Functions
+	âˆŸ 
+	âˆŸ 
+	âˆŸ 
+
+ ----------------------------------------------------------------------
+ âˆŸ vector
+	âˆŸ 
+	âˆŸ 
+	âˆŸ 
+
+ ----------------------------------------------------------------------
+
+
+
+
+
+ê³„ì‚°(computation)ì´ëž€ ë¬´ì—‡ì¸ê°€ìš”?
 <details><summary></summary>
 
 </details>
 
-°è»êÀÇ ÀÔ·Â°ú Ãâ·ÂÀÌ¶õ ¹«¾ùÀ» ÀÇ¹ÌÇÏ³ª¿ä? ¿¹½Ã¸¦ µé¾îº¸¼¼¿ä.
+ê³„ì‚°ì˜ ìž…ë ¥ê³¼ ì¶œë ¥ì´ëž€ ë¬´ì—‡ì„ ì˜ë¯¸í•˜ë‚˜ìš”? ì˜ˆì‹œë¥¼ ë“¤ì–´ë³´ì„¸ìš”.
 <details><summary></summary>
 
 </details>
 
-ÇÁ·Î±×·¡¸Ó°¡ °è»êÀ» Ç¥ÇöÇÒ ¶§ °í·ÁÇØ¾ß ÇÒ ¼¼ °¡Áö ¿ä±¸»çÇ×Àº ¹«¾ùÀÎ°¡¿ä?
+í”„ë¡œê·¸ëž˜ë¨¸ê°€ ê³„ì‚°ì„ í‘œí˜„í•  ë•Œ ê³ ë ¤í•´ì•¼ í•  ì„¸ ê°€ì§€ ìš”êµ¬ì‚¬í•­ì€ ë¬´ì—‡ì¸ê°€ìš”?
 <details><summary></summary>
 
 </details>
 
-Ç¥Çö½Ä(expression)Àº ¹«¾ùÀ» ÇÏ³ª¿ä?
+í‘œí˜„ì‹(expression)ì€ ë¬´ì—‡ì„ í•˜ë‚˜ìš”?
 <details><summary></summary>
 
 </details>
 
-¹®Àå(statement)°ú Ç¥Çö½Ä(expression)ÀÇ Â÷ÀÌ´Â ¹«¾ùÀÎ°¡¿ä?
+ë¬¸ìž¥(statement)ê³¼ í‘œí˜„ì‹(expression)ì˜ ì°¨ì´ëŠ” ë¬´ì—‡ì¸ê°€ìš”?
 <details><summary></summary>
 
 </details>
 
-lvalue¶õ ¹«¾ùÀÎ°¡¿ä? ¾î¶² ¿¬»êÀÚµéÀÌ lvalue¸¦ ¿ä±¸ÇÏ¸ç, ±× ÀÌÀ¯´Â ¹«¾ùÀÎ°¡¿ä?
+lvalueëž€ ë¬´ì—‡ì¸ê°€ìš”? ì–´ë–¤ ì—°ì‚°ìžë“¤ì´ lvalueë¥¼ ìš”êµ¬í•˜ë©°, ê·¸ ì´ìœ ëŠ” ë¬´ì—‡ì¸ê°€ìš”?
 <details><summary></summary>
 
 </details>
 
-»ó¼ö Ç¥Çö½Ä(constant expression)ÀÌ¶õ ¹«¾ùÀÎ°¡¿ä?
+ìƒìˆ˜ í‘œí˜„ì‹(constant expression)ì´ëž€ ë¬´ì—‡ì¸ê°€ìš”?
 <details><summary></summary>
 
 </details>
 
-¸®ÅÍ·²(literal)ÀÌ¶õ ¹«¾ùÀÎ°¡¿ä?
+ë¦¬í„°ëŸ´(literal)ì´ëž€ ë¬´ì—‡ì¸ê°€ìš”?
 <details><summary></summary>
 
 </details>
 
-±âÈ£ »ó¼ö(symbolic constant)¶õ ¹«¾ùÀÌ¸ç, ¿Ö »ç¿ëÇÏ´Â°¡¿ä?
+ê¸°í˜¸ ìƒìˆ˜(symbolic constant)ëž€ ë¬´ì—‡ì´ë©°, ì™œ ì‚¬ìš©í•˜ëŠ”ê°€ìš”?
 <details><summary></summary>
 
 </details>
 
-¸ÅÁ÷ »ó¼ö(magic constant)¶õ ¹«¾ùÀÎ°¡¿ä? ¿¹½Ã¸¦ µé¾îº¸¼¼¿ä.
+ë§¤ì§ ìƒìˆ˜(magic constant)ëž€ ë¬´ì—‡ì¸ê°€ìš”? ì˜ˆì‹œë¥¼ ë“¤ì–´ë³´ì„¸ìš”.
 <details><summary></summary>
 
 </details>
 
-Á¤¼ö¿Í ºÎµ¿¼Ò¼öÁ¡ °ª¿¡ »ç¿ëÇÒ ¼ö ÀÖ´Â ¿¬»êÀÚ¿¡´Â ¾î¶² °ÍÀÌ ÀÖ³ª¿ä?
+ì •ìˆ˜ì™€ ë¶€ë™ì†Œìˆ˜ì  ê°’ì— ì‚¬ìš©í•  ìˆ˜ ìžˆëŠ” ì—°ì‚°ìžì—ëŠ” ì–´ë–¤ ê²ƒì´ ìžˆë‚˜ìš”?
 <details><summary></summary>
 
 </details>
 
-Á¤¼ö¿¡´Â »ç¿ë °¡´ÉÇÏÁö¸¸ ºÎµ¿¼Ò¼öÁ¡¿¡´Â »ç¿ëÇÒ ¼ö ¾ø´Â ¿¬»êÀÚ´Â ¹«¾ùÀÎ°¡¿ä?
+ì •ìˆ˜ì—ëŠ” ì‚¬ìš© ê°€ëŠ¥í•˜ì§€ë§Œ ë¶€ë™ì†Œìˆ˜ì ì—ëŠ” ì‚¬ìš©í•  ìˆ˜ ì—†ëŠ” ì—°ì‚°ìžëŠ” ë¬´ì—‡ì¸ê°€ìš”?
 <details><summary></summary>
 
 </details>
 
-¹®ÀÚ¿­¿¡ »ç¿ëÇÒ ¼ö ÀÖ´Â ¿¬»êÀÚ¿¡´Â ¾î¶² °ÍÀÌ ÀÖ³ª¿ä?
+ë¬¸ìžì—´ì— ì‚¬ìš©í•  ìˆ˜ ìžˆëŠ” ì—°ì‚°ìžì—ëŠ” ì–´ë–¤ ê²ƒì´ ìžˆë‚˜ìš”?
 <details><summary></summary>
 
 </details>
 
-switch ¹®ÀÌ if ¹®º¸´Ù ÀûÇÕÇÑ °æ¿ì´Â ¾ðÁ¦ÀÎ°¡¿ä?
+switch ë¬¸ì´ if ë¬¸ë³´ë‹¤ ì í•©í•œ ê²½ìš°ëŠ” ì–¸ì œì¸ê°€ìš”?
 <details><summary></summary>
 
 </details>
 
-switch ¹®¿¡¼­ ÈçÈ÷ ¹ß»ýÇÏ´Â ¹®Á¦´Â ¹«¾ùÀÎ°¡¿ä?
+switch ë¬¸ì—ì„œ í”ížˆ ë°œìƒí•˜ëŠ” ë¬¸ì œëŠ” ë¬´ì—‡ì¸ê°€ìš”?
 <details><summary></summary>
 
 </details>
 
-for ·çÇÁÀÇ Çì´õ ¶óÀÎÀÇ °¢ ºÎºÐÀº ¾î¶² ¿ªÇÒÀ» ÇÏ¸ç, ¾î¶² ¼ø¼­·Î ½ÇÇàµÇ³ª¿ä?
+for ë£¨í”„ì˜ í—¤ë” ë¼ì¸ì˜ ê° ë¶€ë¶„ì€ ì–´ë–¤ ì—­í• ì„ í•˜ë©°, ì–´ë–¤ ìˆœì„œë¡œ ì‹¤í–‰ë˜ë‚˜ìš”?
 <details><summary></summary>
 
 </details>
 
-for ·çÇÁ¿Í while ·çÇÁ´Â °¢°¢ ¾ðÁ¦ »ç¿ëÇÏ´Â °ÍÀÌ ÁÁ³ª¿ä?
+for ë£¨í”„ì™€ while ë£¨í”„ëŠ” ê°ê° ì–¸ì œ ì‚¬ìš©í•˜ëŠ” ê²ƒì´ ì¢‹ë‚˜ìš”?
 <details><summary></summary>
 
 </details>
 
-char foo(int x)¶ó´Â ÇÔ¼ö Á¤ÀÇ´Â ¹«¾ùÀ» ÀÇ¹ÌÇÏ³ª¿ä?
+char foo(int x)ë¼ëŠ” í•¨ìˆ˜ ì •ì˜ëŠ” ë¬´ì—‡ì„ ì˜ë¯¸í•˜ë‚˜ìš”?
 <details><summary></summary>
 
 </details>
 
-ÇÁ·Î±×·¥ÀÇ ÀÏºÎ¸¦ º°µµÀÇ ÇÔ¼ö·Î Á¤ÀÇÇØ¾ß ÇÏ´Â °æ¿ì´Â ¾ðÁ¦ÀÎ°¡¿ä? ÀÌÀ¯¸¦ ³ª¿­ÇØº¸¼¼¿ä.
+í”„ë¡œê·¸ëž¨ì˜ ì¼ë¶€ë¥¼ ë³„ë„ì˜ í•¨ìˆ˜ë¡œ ì •ì˜í•´ì•¼ í•˜ëŠ” ê²½ìš°ëŠ” ì–¸ì œì¸ê°€ìš”? ì´ìœ ë¥¼ ë‚˜ì—´í•´ë³´ì„¸ìš”.
 <details><summary></summary>
 
 </details>
 
-int¿¡ ÇÒ ¼ö ÀÖÁö¸¸ string¿¡´Â ÇÒ ¼ö ¾ø´Â ÀÛ¾÷Àº ¹«¾ùÀÎ°¡¿ä?
+intì— í•  ìˆ˜ ìžˆì§€ë§Œ stringì—ëŠ” í•  ìˆ˜ ì—†ëŠ” ìž‘ì—…ì€ ë¬´ì—‡ì¸ê°€ìš”?
 <details><summary></summary>
 
 </details>
 
-string¿¡ ÇÒ ¼ö ÀÖÁö¸¸ int¿¡´Â ÇÒ ¼ö ¾ø´Â ÀÛ¾÷Àº ¹«¾ùÀÎ°¡¿ä?
+stringì— í•  ìˆ˜ ìžˆì§€ë§Œ intì—ëŠ” í•  ìˆ˜ ì—†ëŠ” ìž‘ì—…ì€ ë¬´ì—‡ì¸ê°€ìš”?
 <details><summary></summary>
 
 </details>
 
-º¤ÅÍÀÇ ¼¼ ¹øÂ° ¿ä¼ÒÀÇ ÀÎµ¦½º´Â ¹«¾ùÀÎ°¡¿ä?
+ë²¡í„°ì˜ ì„¸ ë²ˆì§¸ ìš”ì†Œì˜ ì¸ë±ìŠ¤ëŠ” ë¬´ì—‡ì¸ê°€ìš”?
 <details><summary></summary>
 
 </details>
 
-º¤ÅÍÀÇ ¸ðµç ¿ä¼Ò¸¦ Ãâ·ÂÇÏ´Â for ·çÇÁ´Â ¾î¶»°Ô ÀÛ¼ºÇÏ³ª¿ä?
+ë²¡í„°ì˜ ëª¨ë“  ìš”ì†Œë¥¼ ì¶œë ¥í•˜ëŠ” for ë£¨í”„ëŠ” ì–´ë–»ê²Œ ìž‘ì„±í•˜ë‚˜ìš”?
 <details><summary></summary>
 
 ```cpp
 int n = -1;
 cin>>n;
 vector<int>number(n);	
-for(int x : number)cout<<number[x]<<' '; // numberº¤ÅÍ¿¡ ´ëÇØ ¼øÂ÷ÀûÀ¸·Î x°¡ Ãâ·ÂÀÌ °¡´ÉÇÏ°í ÀÌ°æ¿ì ÀÎµ¦½º Á¢±ÙÀÌ ºÒ°¡´ÉÇÏ´Ù.
+for(int x : number)cout<<number[x]<<' '; // numberë²¡í„°ì— ëŒ€í•´ ìˆœì°¨ì ìœ¼ë¡œ xê°€ ì¶œë ¥ì´ ê°€ëŠ¥í•˜ê³  ì´ê²½ìš° ì¸ë±ìŠ¤ ì ‘ê·¼ì´ ë¶ˆê°€ëŠ¥í•˜ë‹¤.
 for(int x = 0 ; x<number )
 ```
 
 </details>
 
-vector<char> alphabet(26);´Â ¹«¾ùÀ» ÇÏ³ª¿ä?
+vector<char> alphabet(26);ëŠ” ë¬´ì—‡ì„ í•˜ë‚˜ìš”?
 <details><summary></summary>
-charÇüÀÇ Å©±â 26Â¥¸® ³»¿ëÀÌ ºó º¤ÅÍÀÌ´Ù.
+charí˜•ì˜ í¬ê¸° 26ì§œë¦¬ ë‚´ìš©ì´ ë¹ˆ ë²¡í„°ì´ë‹¤.
 </details>
 
-push_back()Àº º¤ÅÍ¿¡ ¾î¶² µ¿ÀÛÀ» ÇÏ³ª¿ä?
+push_back()ì€ ë²¡í„°ì— ì–´ë–¤ ë™ìž‘ì„ í•˜ë‚˜ìš”?
 <details><summary></summary>
-º¤ÅÍÀÇ »çÀÌÁî¸¦ ÇÑÄ­ ³ÐÈ÷°í Ç×»ó º¤ÅÍÀÇ °¡Àå ¸¶Áö¸·¿¡ ()¿¡ 
-ÇØ´çÇÏ´Â ¼ö¸¦ ÀúÀåÇÒ ¼ö ÀÖ°ÔµÈ´Ù. 
+ë²¡í„°ì˜ ì‚¬ì´ì¦ˆë¥¼ í•œì¹¸ ë„“ížˆê³  í•­ìƒ ë²¡í„°ì˜ ê°€ìž¥ ë§ˆì§€ë§‰ì— ()ì— 
+í•´ë‹¹í•˜ëŠ” ìˆ˜ë¥¼ ì €ìž¥í•  ìˆ˜ ìžˆê²Œëœë‹¤. 
 </details>
 
-º¤ÅÍÀÇ size() ¸â¹ö ÇÔ¼ö´Â ¹«¾ùÀ» ÇÏ³ª¿ä?
+ë²¡í„°ì˜ size() ë©¤ë²„ í•¨ìˆ˜ëŠ” ë¬´ì—‡ì„ í•˜ë‚˜ìš”?
 <details><summary></summary>
-º¤ÅÍÀÇ Å©±â¸¦ ¹ÝÈ¯ÇÑ´Ù. <br>
+ë²¡í„°ì˜ í¬ê¸°ë¥¼ ë°˜í™˜í•œë‹¤. <br>
 vector<int>number_int(50); <br>
-number_int.size() // ´Â 50ÀÌ´Ù.
+number_int.size() // ëŠ” 50ì´ë‹¤.
 </details>
 
-º¤ÅÍ°¡ ÀÎ±â ÀÖ°í À¯¿ëÇÑ ÀÌÀ¯´Â ¹«¾ùÀÎ°¡¿ä?
+ë²¡í„°ê°€ ì¸ê¸° ìžˆê³  ìœ ìš©í•œ ì´ìœ ëŠ” ë¬´ì—‡ì¸ê°€ìš”?
 <details><summary></summary>
-push_back()ÇÔ¼ö¸¦ ÅëÇØ ¼Õ½±°Ô ÇÔ¼öÀÇ size °¡Àå µÞÀÚ¸®¿¡ ³»¿ëÀ» Ãß°¡ÇÒ ¼ö ÀÖ´Ù.
+push_back()í•¨ìˆ˜ë¥¼ í†µí•´ ì†ì‰½ê²Œ í•¨ìˆ˜ì˜ size ê°€ìž¥ ë’·ìžë¦¬ì— ë‚´ìš©ì„ ì¶”ê°€í•  ìˆ˜ ìžˆë‹¤.
 </details>
 
-º¤ÅÍÀÇ ¿ä¼Ò¸¦ Á¤·ÄÇÏ·Á¸é ¾î¶»°Ô ÇØ¾ß ÇÏ³ª¿ä?
+ë²¡í„°ì˜ ìš”ì†Œë¥¼ ì •ë ¬í•˜ë ¤ë©´ ì–´ë–»ê²Œ í•´ì•¼ í•˜ë‚˜ìš”?
 <details><summary></summary>
-¾Ë°í¸®ÁòÀÇ sort()ÇÔ¼ö¸¦ ÀÌ¿ëÇØ¼­ ¿À¸§Â÷¼ø Á¤·ÄÀ» »ç¿ëÇÒ ¼ö ÀÖ´Ù.
+ì•Œê³ ë¦¬ì¦˜ì˜ sort()í•¨ìˆ˜ë¥¼ ì´ìš©í•´ì„œ ì˜¤ë¦„ì°¨ìˆœ ì •ë ¬ì„ ì‚¬ìš©í•  ìˆ˜ ìžˆë‹¤.
 </details>
 
