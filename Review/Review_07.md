@@ -173,22 +173,93 @@ Technicalities: Functions
 ----------------------------------------------------------------------
 	∟ Function call and return 
 		∟ Function call implementation
+			∟ 컴퓨터는 실제로 함수 호출을 어떻게 수행할까
+				∟ Chapter 5, 6에 대한 복습 진행 ㄱ
+			∟ 언어 구현은 function activation record라 불리는 데이터 구조를 따로 마련한다.
+			이 구조에는 해당 함수의 모든 인자와 지역변수의 복사본이 포함된다.
+			활성화 레코드는 함수가 호출될때마다 생성되며 함수가 종료되면 제거된다.
+			∟ recursive function(재귀 함수), 함수가 직접 또는 간접적으로 자신을 호출하는 경우.
+			∟ 함수는 호출될때마다 활성화 레코드의 스택(stack), 하나의 레코드를 추가하며 성장한다.
+												∟ last in, first out 
+			∟ 
 ----------------------------------------------------------------------
 	∟ Function call and return 
 		∟ Compile-time computation
+			∟ 계산을 컴파일 시점에 수행하고 싶을때
+						∟ 계산은 런타임에서 이뤄진다.(설정이 없다면)
+						∟ constant expression (상수 표현식)
+							∟ constexpr로 선언
+							∟ ex. comfile_time_computation07.cpp
+			∟ 컴파일 시점에만 평가되길 원한다면 consteval로 선언
+
+
 ----------------------------------------------------------------------
 	∟ Function call and return 
 		∟ Suffix return type
+			∟ auto 함수이름(매개변수 목록) -> 반환 타입;
+			∟ 인자 타입에 따라 반환 타입이 결정되는 경우에는 이 표기법이 필수적일 수 있으며
+			함수이름이 정렬되는 시각적 장점이 있다.
+
 ----------------------------------------------------------------------
 	∟ Order of evaluation 
 		∟ Expression evaluation
+						∟ 즉, 실행(execution)
+		∟ 평가는 언어규칙에 따라 statement를 순차적으로 처리하는 방식으로 진행된다.
+											∟ thread of execution
+		∟ Expression Evaluation
+			∟ sub-Expression의 평가순서는 Optimizer를 만족시키기 위한 규칙에 따라 결정된다.
+				∟ 표현식 내에서 변수의 값을 변경하는 경우, 
+				해당 변수를 같은 표현식에서 두번 이상 일거나 사용 말자.
+			∟ 대입연산자(=,+=)은 right to left로 평가된다.
+			∟ &&연산자에서는 왼쪽 피연산자가 true일 경우에만 오른쪽 피연산자가 평가된다.
+			∟ ||연산자에서는 오른쪽 피연산자가 false일 경우에만 오른쪽 피연산자가 평가된다.
+		∟ short-circuit evaluation
 ----------------------------------------------------------------------
+	∟ Order of evaluation 
 		∟ Global initialization
+			∟ Global variable(전역 변수)는 극히 제한된 상황을 제외하고는 사용하는 것이 바람직하지 않다.
+			∟ static local variable(정적 지역 변수), 비용이 큰 함수라면, 객체를 한번만 생성하고
+			재사용하고 싶을 것이다. 이를 위해 static local variable을 사용할 수 있다.
+----------------------------------------------------------------------
+	∟ Namespaces 
+		∟ 클래스, 함수, 데이터, 타입을 그룹화하기 위한 언어적 메커니즘이 바로 네임스페이스(namespace)이다.	
+		∟  모두 전역 네임스페이스(global namespace)를 사용한다면, 이름충돌이 발생할 것이다.
+			∟ ex. 사용 예제 Graph_lib::Text TextLib::Text
+----------------------------------------------------------------------
 	∟ Namespaces 
 		∟ using-declarations and using-directives
+		∟ 완전한 이름(fully qualified name)을 계속 작성하는 것은 번거롭다.
+		매번 “정식” 이름으로 참조하고 싶지는 않다.
+		때로는 네임스페이스의 이름들을 더 강력하게 축약해서 사용하고 싶을 때가 있다.
+		∟ “이 범위(scope)에서 이름을 찾을 수 없다면 
+		std 네임스페이스에서 찾아라”는 의미를 전달하고 싶을 때는 
+		using 지시문(using directive) 을 사용한다.
+		∟ 매우 잘 알려진 네임스페이스를 제외하고는 using 지시문을 사용하는 것을 피하는 것이 좋다.
+		using 지시문을 과도하게 사용하면 이름이 어디서 왔는지 추적하기 어려워지고, 
+		결국 이름 충돌(name clash)이 발생할 수 있다.
+----------------------------------------------------------------------
 	∟ Modules and headers 
+		∟ 선언(declaration)과 정의(definition)을 어떻게 관리할 것인가?
+		헤더(header): 파일 단위로 프로그램을 구성하기 위한 오래되고 확립된 메커니즘
+		모듈(module): 모듈성을 직접 표현할 수 있는 현대적인 언어 메커니즘
 		∟ Modules 
+			∟ ex. Tokenstream.ixx
+			∟ export로 표시된 정의는 모듈을 가져오는 사용자에게 공개된다. 
+			∟ 모듈은 필요한 기능만을 명확하게 내보내고(import/export), 
+			내부 구현은 숨길 수 있는 구조를 제공한다. 
+			이는 모듈성이 뛰어난 프로그램을 작성하고, 
+			컴파일 속도를 향상시키며, 
+			코드의 의존성을 명확하게 관리하는 데 매우 유용하다.
+			∟ 모듈을 컴파일하고 사용하는 방법은 사용하는 C++ 구현체에 따라 달라지며, 
+			이에 대한 정보는 cppreference.com에서 확인할 수 있다.
+			∟ 모듈의 여러 이점
+			빠른 컴파일 속도와 관심사의 명확한 분리(isolation of concerns) 를 지원한다. 
+
+----------------------------------------------------------------------
+	∟ Modules and headers 
 		∟ Header files 
+
+
 
 [1] 선언(declaration)과 정의(definition)의 차이는 무엇인가?
 <details><summary></summary>
