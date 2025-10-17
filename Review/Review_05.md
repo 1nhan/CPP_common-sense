@@ -1,4 +1,184 @@
-﻿### “프로그래밍은 이해다(Programming is understanding)”라는 말의 의미는 무엇인가?
+﻿### Review
+```
+
+Writing a Program
+├─A problem
+├─Thinking about the problem
+│   ├─stages of development
+│   └─strategy
+├─Back to the calculator!
+│   ├─first attempt
+│   ├─tokens
+│   ├─implementing tokens
+│   └─using tokens
+├─Back to the drawing board
+│   ├─grammar
+│   └─writing a grammar
+├─Turning a grammar into code
+│   ├─implementing grammar rules
+│   ├─expressions
+│   ├─terms
+│   └─primary expressions
+├─Trying the first version
+├─Trying the second version
+├─Token streams
+│   ├─implement Token_stream
+│   ├─reading tokens
+│   └─reading numbers
+└─Program structure
+```
+--------------------------------------------------------------------------------------------------------------
+```
+Writing a Program
+├─A problem
+    ├─ 프로그램을 작성하는 일은 문제(problem)에서 시작된다.
+    │                           └─ 그 문제를 정확히 이해하는 것이 좋은 프로그램을 만드는 데 핵심이다.
+    ├─ “사용자가 입력한 수식(expression)에 대해 컴퓨터가 일반적인 산술 연산(arithmetic)을 수행하게 하자.”
+    └─ simple calculator를 작성하고자 한다.
+```
+--------------------------------------------------------------------------------------------------------------
+```
+Writing a Program
+├─Thinking about the problem
+    ├─ 어떻게 시작해야 할까?
+    ├─ 무엇을 해야 하는지, 어떻게 상호작용하고 싶은지, 어떻게 구현할 수 있을지를 고민하면 된다.
+    └─ 작은 계산기 문제(tiny calculator problem)에 빠르게 적용해볼 것이다.
+        └─ 현실감을 높이기 위해, 우리는 프로그램을 여러 버전을 거쳐 점진적으로 발전시키며, 
+        각 버전으로 이어지는 사고 과정(reasoning)을 함께 제시할 것이다.
+```
+--------------------------------------------------------------------------------------------------------------
+```
+Writing a Program
+├─Thinking about the problem
+│   ├─stages of development
+        ├─  프로그램 개발을 위한 몇 가지 용어(terminology)
+            ├─ Analysis (분석)
+                └─ 무엇을 해야 하는지를 파악하고, 현재의 이해를 바탕으로 설명(description)을 작성한다.
+                                                                        └─ 요구사항(requirements) 또는 
+                                                                        명세(specification)라고 불린다. 
+            ├─ Design (설계)
+                └─시스템의 전체 구조를 구성하고, 구현이 어떤 구성 요소(parts)를 가져야 하는지, 그리고 
+                그 구성 요소들이 어떻게 상호작용(communicate)해야 하는지를 결정한다. 
+            └─ Implementation (구현)
+                └─ 코드를 작성하고, 디버깅(debug), 테스트(test)를 통해 프로그램이 의도한 대로 동작하는지 확인한다.
+
+```
+--------------------------------------------------------------------------------------------------------------
+```
+Writing a Program
+├─Thinking about the problem
+│   ├─Strategy
+        ├─ 해결해야 할 문제는 무엇인가?
+            ├─가장 먼저 달성하고자 하는 목표를 명확히 하는 것이다.
+            ├─사용자(user)의 관점을 취해야 한다.
+                └─무엇을 해야 하는가에 대해 질문해야 한다.
+            └─
+        ├─ 프로그램을 관리 가능한 부분으로 나누어라
+            ├─ 도움이 될 수 있는 도구나 라이브러리 등을 알고 있는가?
+            ├─ 라이브러리가 작업에 적합하고 품질이 충분한지 어떻게 알 수 있는가?
+            ├─ 표현식(expression), 문(statement), 타입(type)만으로 대형 프로그램을 직접 만들려고 해서는 안 된다.
+            ├─ 부품을 설계하고 구현하는 것이 핵심 주제이며, 소프트웨어 개발의 핵심이기도 하다.
+                        └─ 더 많은 예시와 그 설계 근거(design rationale)를 함께 제시한다.
+        ├─ 문제의 핵심 부분을 해결하는 작고 제한된 버전의 프로그램을 먼저 만들어라
+            ├─ 먼저 작고 제한된 버전(small, limited version)을 만든다.
+                ├─ 이해, 아이디어, 도구의 문제점을 드러내기 위해
+                └─ 문제 설명의 세부사항을 조정할 필요가 있는지 확인하기 위해
+            └─ 제한된 초기 버전은 실험을 목적으로 한 것이며, 프로토타입(prototype)이라 불리기도 한다.
+        └─ 초기 버전의 일부를 활용하여 전체 규모의 해결책(full-scale solution)을 구축하라
+            └─ 프로그램을 점진적으로 성장시키는 것, 
+            검증되지 않은 아이디어가 기적적으로 작동하기를 바라는 것은 바람직하지 않다.
+```
+--------------------------------------------------------------------------------------------------------------
+```
+Writing a Program
+├─Back to the calculator!
+│   ├─ 키보드와 콘솔 창(console window)만 사용
+        └─ 키보드로부터 수식(expression)을 입력받아 그 수식을 평가(evaluate)하고 결과값을 화면에 출력한다.
+    ├─ use case를 초기에 스케치해보는 것은 매우 중요하다.
+        ├─design와 analysis을 논의할 때, use case라 불린다,
+        프로그램이 최소한 무엇을 해야 하는지에 대한  실질적인 정의(definition)를 제공해준다.
+        └─의사 코드(pseudo code)
+            └─설계 초기 단계에서 아직 정확한 표기법(notation)을 확신하지 못할 때 의사 코드를 자주 사용한다.
+```
+--------------------------------------------------------------------------------------------------------------
+```
+Writing a Program
+├─Back to the calculator!
+│   ├─first attempt
+        └─연산 순서(order of operations)를 잘못 처리하고 있다.
+            └─ ex. 1+2*3은 (1+2)*3 = 9? 
+```
+--------------------------------------------------------------------------------------------------------------
+```
+Writing a Program
+├─Back to the calculator!
+│   ├─tokens
+        ├─ tokenization
+            └─ 입력된 문자들을 먼저 읽고, 이를 의미 있는 단위인 토큰(token)으로 분리하는 것이다.
+        ├─ 하나의 단위로 간주하는 어떤 개념을 나타내는 문자들의 연속이다.
+            └─ C++ 컴파일러가 소스 코드를 처리하는 방식이기도 하다. 
+        ├─ 코드에서 (종류, 값) 쌍을 어떻게 표현할 수 있을까?
+        ├─ 왜 타입을 정의하는가?
+            └─ 필요한 데이터를 저장하고, 그 데이터에 대해 유용한 연산을 제공하기 때문이다.
+        └─ C++은 대부분의 현대 언어들과 마찬가지로 사용자 정의 타입(User-defined types)을 지원한다.
+```
+--------------------------------------------------------------------------------------------------------------
+```
+Writing a Program
+├─Back to the calculator!
+│   ├─implementing tokens
+        ├─  
+        ├─  
+        ├─
+        └─
+```
+--------------------------------------------------------------------------------------------------------------
+Writing a Program
+├─Back to the calculator!
+│   └─using tokens
+--------------------------------------------------------------------------------------------------------------
+Writing a Program
+├─Back to the drawing board
+--------------------------------------------------------------------------------------------------------------
+Writing a Program
+├─Back to the drawing board
+│   ├─grammar
+--------------------------------------------------------------------------------------------------------------
+Writing a Program
+│   └─writing a grammar
+--------------------------------------------------------------------------------------------------------------
+Writing a Program
+├─Back to the drawing board
+--------------------------------------------------------------------------------------------------------------
+Writing a Program
+├─Turning a grammar into code
+--------------------------------------------------------------------------------------------------------------
+Writing a Program
+├─Turning a grammar into code
+│   ├─implementing grammar rules
+--------------------------------------------------------------------------------------------------------------
+Writing a Program
+├─Turning a grammar into code
+│   ├─expressions
+--------------------------------------------------------------------------------------------------------------
+│   ├─terms
+--------------------------------------------------------------------------------------------------------------
+│   └─primary expressions
+├─Trying the first version
+├─Trying the second version
+├─Token streams
+│   ├─implement Token_stream
+│   ├─reading tokens
+│   └─reading numbers
+└─Program structure
+
+
+
+
+
+
+
+“프로그래밍은 이해다(Programming is understanding)”라는 말의 의미는 무엇인가?
 <details><summary></summary>
 
 프로그램을 작성한다는 것은 우리가 무엇을 하고 싶은지, 

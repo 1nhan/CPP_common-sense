@@ -23,8 +23,7 @@ using namespace std;
 void error(const string& msg) {
 	throw runtime_error(msg);
 }
-/*
-*/
+
 int main(void) {
 	vector<string>name_vec;
 	vector<double>value_vec;
@@ -34,12 +33,11 @@ int main(void) {
 		if (name == " ") error("no name");
 		name_vec.push_back(name);
 		value_vec.push_back(value);
-/*
-*/
 		if (name == "NoName" && value == 0) {
 			error("error massage");
 			if (name_vec.size() != value_vec.size()) 
 				error("Different size");
+			
 			for (int i = 0; i < name_vec.size(); ++i) 
 				cout << name_vec[i] << ' ' << value_vec[i] << '\n';
 			return 0;
