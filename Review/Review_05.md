@@ -93,7 +93,7 @@ Writing a Program
 Writing a Program
 ├─Back to the calculator!
 │   ├─ 키보드와 콘솔 창(console window)만 사용
-        └─ 키보드로부터 수식(expression)을 입력받아 그 수식을 평가(evaluate)하고 결과값을 화면에 출력한다.
+        └─ 키보드로부터 수식(expression)을 입력받아 수식을 평가(evaluate)하고 결과값을 화면에 출력한다.
     ├─ use case를 초기에 스케치해보는 것은 매우 중요하다.
         ├─design와 analysis을 논의할 때, use case라 불린다,
         프로그램이 최소한 무엇을 해야 하는지에 대한  실질적인 정의(definition)를 제공해준다.
@@ -127,15 +127,27 @@ Writing a Program
 Writing a Program
 ├─Back to the calculator!
 │   ├─implementing tokens
-        ├─  
-        ├─  
-        ├─
-        └─
+        ├─ 어떤 형태를 가져야 할까?
+        ├─ 원하는 타입은 어떤 모습이어야 할까?
+            └─연산자(operator)를 표현할 수 있어야 하며, 
+            숫자 값(numeric value)도 표현할 수 있어야 한다.
+        ├─ Token은 C++의 사용자 정의 타입(user-defined type)의 예시이다.
+            └─ 멤버에 접근할 때는 다음과 같은 표기법을 사용한다:
+            객체_이름 . 멤버_이름
+            └─ 복사할 수 있다.
+            └─ 초기화(생성)할 수 있다.
+                └─ ex. Token t1 {'+'}; Token t2 {'8', 11.5};
 ```
 --------------------------------------------------------------------------------------------------------------
+```
 Writing a Program
 ├─Back to the calculator!
 │   └─using tokens
+        └─ Token을 어떻게 사용할 수 있을까?
+            └─ 입력을 Token 객체의 벡터(vector)에 저장하는 방식이 가능하다.
+                                    └─ ex. vector<Token> tok;
+        └─             
+```
 --------------------------------------------------------------------------------------------------------------
 Writing a Program
 ├─Back to the drawing board
