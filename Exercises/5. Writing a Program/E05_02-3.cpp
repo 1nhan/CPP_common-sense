@@ -14,3 +14,142 @@
 	팩토리얼은 정수에만 정의되므로 x!에 대해서는 x를 int로 변환하여 팩토리얼을 계산하라.
 *
 ***********************************************************************************/
+import std;
+using namespace std;
+/*
+	auto error()->void
+	clss Token
+	class Token_stream
+	auto expression()->double
+	auto term()->double
+	auto primary()->double
+	main(){}실행
+*/
+
+auto error(const string& msg) -> void {
+	throw runtime_error(msg);
+}
+
+class Token {
+public:
+	Token(char k) :kind{ k } {};
+	Token(char k,double d) :kind{ k }, value{ d } {};
+	char get_kind() { return kind; };
+	double get_value() { return value; };
+private:
+	char kind;
+	double value;
+};
+
+class Token_stream {
+public:
+	Token_stream();
+	auto putback(Token)->void;
+	auto get()->Token;
+private:
+	Token buffer;
+	bool full = false;
+};
+
+auto Token_stream::putback(Token t)->void {
+	if (!full) error("no buffer");
+	full = true;
+	buffer = t;
+}
+
+auto Token_stream::get()->Token {
+	if (full) {
+		return buffer;
+	}
+	char ch = 0;
+	if (!(cin >> ch)) error("no input");
+
+	switch (ch) {
+	case';':
+	case'q':
+	case'(':case')':
+	case'+':case'-':case'*':case'/':
+		return Token{ ch };
+	case'.':
+	case'0':case'1':case'2':case'3':case'4':
+	case'5':case'6':case'7':case'8':case'9':
+	{
+		cin.putback(ch);
+		double val=0;
+		cin >> val;
+		return Token{ '8',val };
+	}
+	default:
+		error("bad token");
+	}
+}
+
+/*
+	auto expression()->double
+	auto term()->double
+	auto primary()->double
+*/
+auto term() -> double;
+auto expression() -> double {
+	double left = term();
+	Token_stream ts;
+	Token t = ts.get();
+	while (true) {
+		switch (t.get_kind()) {
+		case'+':
+			left += term();
+			t = ts.get();
+			return left;
+		case'-':
+			left -= term();
+			t = ts.get();
+			return left;
+		default:
+			return left;
+		}
+	}
+	error("bad token");
+}
+
+/*
+	term()->double
+	*, / 0으로 나누게 하면 안됨.
+*/
+auto primary() -> double;
+auto term() -> double {
+	double left = primary();
+	Token_stream ts;
+	Token t = ts.get();
+
+	while (true) {
+		switch (t.get_kind()) {
+		case'*':
+			left *= primary();
+			t = ts.get();
+			return left;
+		case'/': {
+			double d = primary();
+			if (d == 0)error("zero divide");
+			left /= d;
+			return left;
+		}
+		default:
+			return left;
+		}
+	}
+}
+
+auto primary() -> double {
+	Token_stream ts;
+	Token t = ts.get();
+
+	switch (t.get_kind()) {
+	case'(': {
+
+	}
+	case'8':
+
+	default:
+
+	}
+}

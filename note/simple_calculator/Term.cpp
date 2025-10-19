@@ -11,7 +11,6 @@ auto Term() -> double {
 	double left = Primary();
 	Token_stream ts;
 	Token t = ts.get();
-	char k = 0;
 	while (true) {
 		switch (t.kind) {
 		case'*': 
@@ -24,7 +23,7 @@ auto Term() -> double {
 				error("divide by zero");
 			left /= d;
 			t = ts.get();
-			return ;
+			break;
 		}
 		default:
 			return left;
