@@ -1,0 +1,33 @@
+
+import Term;
+import std;
+import error;
+import Token;
+import Token_stream;
+import Primary;
+using namespace std;
+
+auto Term() -> double {
+	double left = Primary();
+	Token_stream ts;
+	Token t = ts.get();
+	char k = 0;
+	while (true) {
+		switch (t.kind) {
+		case'*': 
+			left *= Primary(); 
+			t= ts.get(); 
+			break;
+		case'/': {
+			double d = Primary();
+			if (d == 0)
+				error("divide by zero");
+			left /= d;
+			t = ts.get();
+			return ;
+		}
+		default:
+			return left;
+		}
+	}
+}
