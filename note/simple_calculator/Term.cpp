@@ -9,10 +9,10 @@ using namespace std;
 
 auto Term() -> double {
 	double left = Primary();
-	Token_stream ts;
 	Token t = ts.get();
+
 	while (true) {
-		switch (t.kind) {
+		switch (t.get_kind()) {
 		case'*': 
 			left *= Primary(); 
 			t= ts.get(); 

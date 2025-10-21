@@ -16,6 +16,7 @@
 ***********************************************************************************/
 import std;
 using namespace std;
+
 /*
 	auto error()->void
 	clss Token
@@ -26,130 +27,165 @@ using namespace std;
 	main(){}실행
 */
 
+/****************************************/
+/*				error()->void			*/		
+/****************************************/
 auto error(const string& msg) -> void {
 	throw runtime_error(msg);
 }
-
+/****************************************/
+/*				class Token				*/	
+/****************************************/
 class Token {
 public:
-	Token(char k) :kind{ k } {};
-	Token(char k,double d) :kind{ k }, value{ d } {};
-	char get_kind() { return kind; };
-	double get_value() { return value; };
+	Token() :value{ 0.0 }, kind{ ' ' } {}
+	Token(char k) :value{ 0.0 }, kind{ k } {}
+	Token(char k, double d) :value{ d }, kind{ k } {}
+	auto get_value()->double { return value; };
+	auto get_kind()->char { return kind; };
 private:
-	char kind;
 	double value;
+	char kind;
 };
-
+/****************************************/
+/*			class Token_stream			*/
+/****************************************/
 class Token_stream {
 public:
-	Token_stream();
-	auto putback(Token)->void;
+	Token_stream() 
+		:full{ false }, buffer{ ' ', 0 } {}
 	auto get()->Token;
+	auto putback(Token t)->void;
+
 private:
-	Token buffer;
 	bool full = false;
+	Token buffer;
 };
-
-auto Token_stream::putback(Token t)->void {
-	if (!full) error("no buffer");
-	full = true;
+/****************************************/
+/*	  Token_stream:: member function	*/
+/* putback()							*/		
+/****************************************/
+auto Token_stream::putback(Token t) -> void{
+	if (full) error("full buffer");
 	buffer = t;
+	full = true;
 }
-
+/****************************************/
+/*	  Token_stream:: member function	*/
+/* get()								*/
+/****************************************/
 auto Token_stream::get()->Token {
 	if (full) {
+		full = false;
 		return buffer;
 	}
-	char ch = 0;
-	if (!(cin >> ch)) error("no input");
 
+	char ch = 0; 
+	if (!(cin >> ch)) error("no input"); // >> 연산자는 공백을 건너뜀.
 	switch (ch) {
 	case';':
-	case'q':
+	case 'q':
 	case'(':case')':
-	case'+':case'-':case'*':case'/':
+	case'{':case'}':
+	case'+':case'-':case'*':case'/':case'!':
 		return Token{ ch };
 	case'.':
 	case'0':case'1':case'2':case'3':case'4':
-	case'5':case'6':case'7':case'8':case'9':
-	{
+	case'5':case'6':case'7':case'8':case'9': {
 		cin.putback(ch);
-		double val=0;
+		double val = 0;
 		cin >> val;
 		return Token{ '8',val };
 	}
-	default:
-		error("bad token");
 	}
-}
 
-/*
-	auto expression()->double
-	auto term()->double
-	auto primary()->double
-*/
+}
+/****************************************/
+/*		expression()->	double			*/
+/****************************************/
+Token_stream ts;
+Token t;
 auto term() -> double;
 auto expression() -> double {
 	double left = term();
-	Token_stream ts;
-	Token t = ts.get();
+	t = ts.get();
+
 	while (true) {
 		switch (t.get_kind()) {
-		case'+':
+		case '+':
 			left += term();
 			t = ts.get();
-			return left;
-		case'-':
+			break;
+		case '-':
 			left -= term();
 			t = ts.get();
+			break;
+		default:
 			return left;
+		}
+	}//while
+	error("bad token");
+}
+/****************************************/
+/*			term()->	double			*/
+/****************************************/
+auto primary() -> double;
+auto term() -> double {
+	double left = primary();
+	t = ts.get();
+	while(true) {
+		switch (t.get_kind()) {
+		case '*':
+			left *= primary();
+			t = ts.get();
+			break;
+		case '/': {
+			double d = primary();
+			if (d == 0)error("zero divide");
+			left /= d;
+			t = ts.get();
+			break;
+		}
 		default:
 			return left;
 		}
 	}
 	error("bad token");
 }
-
-/*
-	term()->double
-	*, / 0으로 나누게 하면 안됨.
-*/
-auto primary() -> double;
-auto term() -> double {
-	double left = primary();
-	Token_stream ts;
-	Token t = ts.get();
-
-	while (true) {
-		switch (t.get_kind()) {
-		case'*':
-			left *= primary();
-			t = ts.get();
-			return left;
-		case'/': {
-			double d = primary();
-			if (d == 0)error("zero divide");
-			left /= d;
-			return left;
-		}
-		default:
-			return left;
-		}
-	}
-}
-
+/****************************************/
+/*			primary()->	double			*/
+/****************************************/
 auto primary() -> double {
-	Token_stream ts;
-	Token t = ts.get();
+	t = ts.get();
 
 	switch (t.get_kind()) {
 	case'(': {
-
+		double d = expression();
+		t = ts.get();
+		//if (t.get_kind() == ')')
+		if (t.get_kind() != ')')
+			error("')'expected");
+		return d;
 	}
-	case'8':
 
+	case '8':
+		return t.get_value();
 	default:
-
+		error("");
 	}
+}
+/****************************************/
+/*				main					*/
+/****************************************/
+auto main(void)->int 
+try{
+	while (cin) {
+		cout << expression()<<'\n';
+	}
+}
+catch (exception& e) {
+	cerr << e.what() << '\n';
+}
+catch (...) {
+	cerr << "exception" << '\n';
 }

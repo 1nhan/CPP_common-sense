@@ -8,20 +8,18 @@ import error;
 using namespace std;
 
 auto Primary() -> double {
-	Token_stream ts;
 	Token t = ts.get();
 
-	switch (t.kind) {
-	case'(':
-	{
+	switch (t.get_kind()) {
+	case'(':{
 		double d = Expression();
 		t = ts.get();
-		if (t.kind != ')')
+		if (t.get_kind() != ')')
 			error("'('expected");
 		return d;
 	}
 	case '8':
-		return t.value;
+		return t.get_value();
 	default:
 		error("primary expected");
 	}

@@ -13,16 +13,15 @@ using namespace std;
 	멤버 함수 정의를 클래스 내부에 포함시키면 
 	클래스 정의가 지나치게 길어질 수 있다.
 */
+Token_stream ts;
 auto Token_stream::putback(Token t) -> void{
 	if (full)/*
 		precondion을 확인 "버퍼가 이미 채워졌는가?"*/
 		error("putback()into a full buffer");
-
 	buffer = t;/*
 		t를 buffer에 복사*/
 	full = true;/*
 		버퍼가 채워졌음을 표시*/
-	
 }
 
 /*
@@ -31,7 +30,6 @@ auto Token_stream::putback(Token t) -> void{
 	2. 토큰이 false인 경우 buffer에 char를 읽고 처리
 */
 auto Token_stream::get() ->Token {
-		
 	if (full) {/*
 		이미 준비된 토큰이 있는가?*/
 		full = false;/*
@@ -42,7 +40,6 @@ auto Token_stream::get() ->Token {
 	if (!(cin >> ch)) /*
 		연산자는 공백 스페이스 줄바꿈 탭등으로 건너뜀*/
 		error("no input");
-
 	switch (ch) {
 	case';': // 출력 명령 print
 	case'q': // 종료 명령 quit
