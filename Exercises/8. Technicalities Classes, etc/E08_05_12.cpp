@@ -11,7 +11,41 @@
 	예를 들어, ISBN은 n−n−n−x 형식만 허용하되,
 	여기서 n은 정수이고 x는 숫자 또는 문자여야 한다.
 	ISBN은 문자열(string)로 저장하시오.
+	*/
 
+import std;
+using namespace std;
+
+void error(const string& msg) {
+	throw runtime_error(msg);
+}
+
+class Book {
+public:
+	Book() 
+		:ISBN{ "n-n-n-x" }, title{ "title" }, 
+		author{"name"}, copyright_date{19000101} {};
+	
+	auto get_ISBN() -> string;
+	auto get_title() -> string; 
+	auto get_author() -> string;
+	auto get_copyright_date() -> int;
+	auto Book_loan() -> void {};
+	auto Book_return() -> void {};
+private:
+	string ISBN, title, author;
+	int copyright_date;
+};
+auto Book::get_ISBN() -> string {
+	char ch = ' ';
+	if('-'==ch) 
+}
+	
+
+	
+	
+	
+	/*
 	[6] Book 클래스에 연산자를 추가하시오.
 	== 연산자는 두 도서의 ISBN 번호가 동일한지를 검사하도록 하시오.
 	!= 연산자도 ISBN 번호를 비교하도록 하시오.
@@ -55,3 +89,4 @@
 	표현 가능한 범위를 벗어난 날짜는 거부하시오(day 0 이전의 날짜는 거부 가능).
 
 *******************************************************************************************/
+
