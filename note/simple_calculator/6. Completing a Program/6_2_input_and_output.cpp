@@ -39,7 +39,7 @@ private:
 /****************************************/
 class Token_stream {
 public:
-	auto putback(Token)->void;
+	auto putback(Token) -> void;
 	auto get() -> Token;
 private:
 	bool full = false;
@@ -97,15 +97,15 @@ auto expression() -> double;
 
 /****************************************/
 /*			primary()->	double			*/
-/*										*/	
+/*										*/
 /****************************************/
 auto primary() -> double {
 	Token t = ts.get();
-	
+
 	switch (t.get_kind()) {
 	case '(': {
 		double d = expression();
-		if (t.get_kind() != ')') 
+		if (t.get_kind() != ')')
 			error("'('expected");
 		return d;
 	}
@@ -172,6 +172,7 @@ auto expression() -> double {
 auto main(void) -> int try {
 	double val = 0;
 	while (cin) {
+		cout << '>' << ' '; // 프롬프트 출력. 프롬프트 변경
 		Token t = ts.get();
 		if (t.get_kind() == 'q')
 			break;
@@ -182,10 +183,12 @@ auto main(void) -> int try {
 			val = expression();
 		}
 	}
-}catch (exception& e) {
+}
+catch (exception& e) {
 	cerr << e.what() << '\n';
 	return 1;
-}catch (...) {
+}
+catch (...) {
 	cerr << "exception" << '\n';
 	return 2;
 }

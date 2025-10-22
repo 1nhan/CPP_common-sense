@@ -448,7 +448,8 @@ Expression과 Term에 대한 규칙도 유사하며, 각각 규칙과 토큰을 
 
 ### Token_stream 클래스의 get() 함수에서 ';'와 'q' 문자가 switch 문에 추가된 이유는 무엇인가?
 <details><summary></summary>
-
+';'은 print.
+'q'는 quit기능을 위해 추가되었다.
 </details>
 
 ### 프로그램 테스트는 언제 시작해야 하는가?
