@@ -1,4 +1,4 @@
-# 안녕하세요. CPP를 학습중입니다!
+# 안녕하세요. CPP(PPP3::Programming Principles and Practice Using C++)를 학습중입니다!
 
 > 언리얼 엔진 기반의 클래식 게임 개발을 위해 C, C++ 프로그래밍에 입문했습니다. 지난 두달 윤성우의 열혈시리즈를 통해 C, 
 > C++를 공부했고 최근 Programming Principles and Practice Using C++ (BJARNE STROUSTRUPTHE CREATOR OF C++)를 공부하고 있습니다.

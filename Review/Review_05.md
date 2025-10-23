@@ -155,10 +155,41 @@ Writing a Program
 --------------------------------------------------------------------------------------------------------------
 Writing a Program
 ├─Back to the drawing board
+    └─ 설계 원칙
+        └─ 초기에 기능을 과도하게 늘리면 프로젝트 규모가 커지고, 초보자라면 감당하기 어렵다.
+        └─ feature creep을 피하고 먼저 최소 기능만 구현한 단순 버전을 만든ㄷ 뒤 점진적으로 확장하는 것이 바람직하다.
+    └─ 프로그래머의 접근법
+        └─ 토큰화, 데이터표현, 연산자 우선순위는 서로 연결되어 있다.
+        └─ 계산기 문제는 오래된 고전 문제라서 표준적인 해결책이 이미 존재한다.
+        └─ 경험 있는 프로그래머는 무작정 새로 만들기보다 기존 문헌이나 동료의 경험을 참고한다.
 --------------------------------------------------------------------------------------------------------------
 Writing a Program
 ├─Back to the drawing board
 │   ├─grammars
+        └─표현식 해석의 표준적 방법
+            └─입력된 문자열을 token으로 분리한다.
+                └─ ex. 45+11.5/7 ->[45][+][11.5][/][7]
+        └─토큰 이후 단계
+            └─단순히 토큰화만으로는 부족하다.
+            └─연산자 우선순위와 괄호 규칙을 반영해야 한다.
+        └─문법 정의
+            └─expression:term, expression+term, expression-term
+            └─term:primary,term*primary,term/primary    
+            └─primary:number '('expression')'
+        └─문법의 역할
+            └─직관적으로 아는 계산 규칙을 정확한 규칙으로 표현
+            └─컴퓨터는 문법을 따라 파싱을 수행한다.
+            └─파서를 직접 생성하는 파서 생성기가 있다.
+        └─파싱 방법
+            └─
+            └─
+            └─
+        └─예시
+            └─
+            └─
+        └─그리고.
+            └─
+            └─
 --------------------------------------------------------------------------------------------------------------
 Writing a Program
 │   └─writing a grammar
@@ -168,6 +199,68 @@ Writing a Program
 --------------------------------------------------------------------------------------------------------------
 Writing a Program
 ├─Turning a grammar into code
+    └─expression:first try
+        └─
+        ```
+            auto expression()->double
+            {
+                double left = expression(); //infinity recursion이 일어남. 
+                Token t = get_token();      //다음 토큰을 가져옴. 
+                switch(t.kind){
+                case '+': 
+                    return left += term();
+                case '-':
+                    return left -= term();
+                default:
+                    return left;
+                }_
+            }
+        ```
+--------------------------------------------------------------------------------------------------------------
+    └─expression:second try
+        └─
+        ```
+            auto expression() -> double
+            {
+            double left = term();       
+            Token t = get_token();      
+            while (t.kind == '+' || t.kind == '−') { 
+                if (t.kind == '+')
+                    left += term();     
+                else
+                    left −= term();     
+                t = get_token();
+            }
+            return left;
+            }
+                └─ +, -에 대해 계속 확인하기 위해 반복문을 도입.
+                get_token()을 두번 호출하고 +,-를 두번 검사하는 중복의 발생.
+                중복은 코드의 논리를 흐릴 수 있으므로, 제거한 개선된 버전이 필요._
+        ```
+--------------------------------------------------------------------------------------------------------------
+    └─expression:third try
+        └─
+        ```
+            auto expression() -> double
+            {
+                double left = term();
+                Token t = get_token();
+                while(true){
+                    switch(t.kind){
+                    case '+':
+                        left += term();
+                        t= get_token();
+                        break;
+                    case '-':
+                        left += term();
+                        t= get_token();
+                        break;
+                    default:
+                        return left;
+                    }
+            }
+
+        ```
 --------------------------------------------------------------------------------------------------------------
 Writing a Program
 ├─Turning a grammar into code
