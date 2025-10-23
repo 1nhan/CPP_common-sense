@@ -1,11 +1,6 @@
+import Calc_Header;
 import std;
 using namespace std;
-import Token;
-import Token_stream;
-import Expression;
-import Term;
-import Primary;
-
 int main()try {
     double val = 0; // 버전 3: 'q'와 ';' 추가
     while (cin) {

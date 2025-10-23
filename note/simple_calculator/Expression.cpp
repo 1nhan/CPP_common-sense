@@ -1,7 +1,5 @@
-import Expression;
-import Token;
-import Token_stream;
-import Term;
+import Calc_Header;
+
 auto Expression() -> double {
 	double left = Term();
 	Token t = ts.get();

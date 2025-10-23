@@ -1,10 +1,6 @@
 
-import Term;
+import Calc_Header;
 import std;
-import error;
-import Token;
-import Token_stream;
-import Primary;
 using namespace std;
 
 auto Term() -> double {
