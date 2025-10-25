@@ -1,4 +1,4 @@
-/************************************************************************
+/**************************************************************************************
 *
 *	12
 	“Bulls and Cows”라는 간단한 추측 게임을 구현하시오.
@@ -6,7 +6,7 @@
 	사용자는 반복적으로 추측하여 그 숫자를 맞춰야 한다.예를 들어, 
 	정답이 1234이고 사용자가 1359를 입력하면, 출력은 “1 bull and 1 cow”가 되어야 한다.
 	추측은 네 개의 숫자를 정확한 순서로 맞출 때까지 계속된다.
-*/
+***************************************************************************************/
 import std;
 
 using namespace std;
@@ -43,11 +43,11 @@ auto make_number_for_computer() -> vector<int>{
 	}
 
 	/* 출력(확인용)
+	*/
 	for (int i = 0; i < four_number.size(); ++i) {
 		cout << four_number[i] << ' ';
 	}
 	cout << '\n';
-	*/
 	return four_number;
 }
 
@@ -76,11 +76,10 @@ auto bull_cow() -> void
 	vector<int>computer = make_number_for_computer();
 	vector<int>user = make_number_for_user();
 	int cow = 0, bull = 0;
-	prompt();
-	while (bull < rule)
-	{// bull이 4이면 반복은 종료
-		cow = 0;
-		bull = 0;
+	while (true)
+	{
+		prompt();
+		cow = 0, bull = 0;
 		for (int i = 0; i < computer.size(); ++i) {
 			if (computer[i] == user[i])
 				++bull;
@@ -91,7 +90,10 @@ auto bull_cow() -> void
 					++cow;
 		}
 		cout << "“" << bull << " bull and " << cow << " cow”" << '\n';
-		prompt();
+		if (bull == 4) {
+			cout << "Cong!!! lol! 4 bull!!" << '\n';
+			break;
+		}
 		user = make_number_for_user();
 	}
 }
