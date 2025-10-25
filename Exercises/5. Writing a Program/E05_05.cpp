@@ -48,7 +48,6 @@ private:
 	bool full = false;
 	Token buffer;
 };
-
 auto Token_Stream::pushback(Token t) -> void
 {// buffer flag
 	if (full)
