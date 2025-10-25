@@ -1,11 +1,17 @@
-/****************************************************
+/*
+	13
+	위 게임은 정답이 하드코딩되어 있어 반복 플레이가 어렵다.
+	프로그램을 수정하여 사용자가 반복적으로 플레이할 수 있도록 하고,
+	매 게임마다 새로운 네 개의 숫자가 생성되도록 하시오.
+	PPP_support 모듈의 random_int(0,9)를 네 번 호출하여 난수를 생성하시오.
+	프로그램을 반복 실행할 때마다 같은 숫자 시퀀스가 생성되는 것을 피하려면,
+	사용자에게 아무 숫자나 입력받고 이를 seed(n) 함수에 전달하여 시드를 설정하시오.
+	이 n은 시드(seed)라 불리며, 서로 다른 시드는 서로 다른 난수 시퀀스를 생성한다.
 *
-	제4장 연습문제 12번의 “Bulls and Cows” 게임을 
-	숫자 네 자리 대신 문자 네 개를 사용하도록 수정하라.
-*
-*****************************************************/
+*************************************************************************/
 
 import std;
+
 using namespace std;
 
 auto error(const string& msg) -> void
@@ -27,6 +33,8 @@ auto to_be_continue() -> bool
 	default:
 		error("Reject!");
 	}
+
+
 }
 
 auto prompt() -> void {
@@ -104,7 +112,7 @@ auto bull_cow() -> void
 		cout << "“" << bull << " bull and " << cow << " cow”" << '\n';
 		if (bull == 4) {
 			cout << "Cong!!! lol! 4 bull!!" << '\n';
-			if (!to_be_continue())
+			if(!to_be_continue())
 				break;
 		}
 		user = make_number_for_user();
