@@ -2,26 +2,9 @@
 import std;
 using namespace std;
 
-
-/*
-	auto error()->void
-	clss Token
-	class Token_stream
-	auto expression()->double
-	auto term()->double
-	auto primary()->double
-	main(){}½ÇÇà
-*/
-
-/****************************************/
-/*				error()->void			*/
-/****************************************/
 auto error(const string& msg) -> void {
 	throw runtime_error(msg);
 }
-/****************************************/
-/*				class Token				*/
-/****************************************/
 class Token {
 public:
 	Token() :kind{ ' ' }, value{ 0.0 } {};
@@ -34,9 +17,7 @@ private:
 	double value;
 	char kind;
 };
-/****************************************/
-/*			class Token_stream			*/
-/****************************************/
+
 class Token_stream {
 public:
 	auto putback(Token) -> void;
@@ -46,10 +27,6 @@ private:
 	Token buffer;
 };
 
-/****************************************/
-/*	  Token_stream:: member function	*/
-/* putback()							*/
-/****************************************/
 auto Token_stream::putback(Token t) -> void {
 	if (full) {
 		error("putback()into a full buffer");
@@ -57,10 +34,7 @@ auto Token_stream::putback(Token t) -> void {
 	buffer = t;
 	full = true;
 }
-/****************************************/
-/*	  Token_stream:: member function	*/
-/* get()								*/
-/****************************************/
+
 auto Token_stream::get()->Token {
 	if (full) {
 		full = false;
@@ -95,10 +69,6 @@ auto Token_stream::get()->Token {
 Token_stream ts;
 auto expression() -> double;
 
-/****************************************/
-/*			primary()->	double			*/
-/*										*/
-/****************************************/
 auto primary() -> double {
 	Token t = ts.get();
 
@@ -116,9 +86,6 @@ auto primary() -> double {
 	}
 }
 
-/****************************************/
-/*			term()->	double			*/
-/****************************************/
 auto term() -> double {
 	double left = primary();
 	Token t = ts.get();
@@ -143,9 +110,6 @@ auto term() -> double {
 	}
 }
 
-/****************************************/
-/*		expression()->	double			*/
-/****************************************/
 auto expression() -> double {
 	double left = term();
 	Token t = ts.get();
@@ -166,9 +130,6 @@ auto expression() -> double {
 	}
 }
 
-/****************************************/
-/*				main					*/
-/****************************************/
 auto main(void) -> int try {
 	double val = 0;
 	while (cin) {
