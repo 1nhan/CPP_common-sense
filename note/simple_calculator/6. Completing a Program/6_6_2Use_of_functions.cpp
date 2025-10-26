@@ -1,6 +1,13 @@
-ï»¿
+
 import std;
 using namespace std;
+
+// Symbolic constants
+constexpr char Number = '8';
+constexpr char prompt = '>';
+constexpr char Print = ';';
+constexpr char Quit = 'q';
+constexpr char result = '=';
 
 auto error(const string& msg) -> void {
 	throw runtime_error(msg);
@@ -45,7 +52,7 @@ auto Token_stream::get()->Token {
 	if (!(cin >> ch))
 		error("no input");
 	switch (ch) {
-	case ';':case 'q':
+	case Print:case Quit:
 	case '(':case ')':
 	case '+':case '-':
 	case '*':case '/':
@@ -59,7 +66,7 @@ auto Token_stream::get()->Token {
 		cin.putback(ch);
 		double val = 0;
 		cin >> val;
-		return Token{ '8',val };
+		return Token{ Number,val };
 	}
 	default:
 		error("Bad Token");
@@ -79,7 +86,7 @@ auto primary() -> double {
 			error("'('expected");
 		return d;
 	}
-	case  '8':
+	case  Number:
 		return t.get_value();
 	case '+':						//
 		return primary();
@@ -142,19 +149,27 @@ auto expression() -> double {
 	}
 }
 
+auto calculator() -> void 
+{
+	while (cin) {
+		cout << prompt;
+		Token t = ts.get();
+		while (t.get_kind() == Print)
+			t = ts.get(); // ¼¼¹ÌÄÝ·Ð ¹«½Ã
+		if (t.get_kind() == Quit)
+			return;
+		ts.putback(t);
+		cout << result << expression() << '\n';
+	}
+	
+}
+
+
+
 auto main(void) -> int
 try
 {
-	while (cin) {
-		cout << '>';
-		Token t = ts.get();
-		while (t.get_kind() == ';')
-			t = ts.get(); // ì„¸ë¯¸ì½œë¡  ë¬´ì‹œ
-		if (t.get_kind() == 'q')
-			return 0;
-		ts.putback(t);
-		cout << '=' << expression() << '\n';
-	}
+	calculator();
 	return 0;
 }
 catch (exception& e) {

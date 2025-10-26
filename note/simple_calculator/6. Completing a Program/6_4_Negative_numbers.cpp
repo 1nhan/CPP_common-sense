@@ -2,26 +2,9 @@
 import std;
 using namespace std;
 
-
-/*
-	auto error()->void
-	clss Token
-	class Token_stream
-	auto expression()->double
-	auto term()->double
-	auto primary()->double
-	main(){}실행
-*/
-
-/****************************************/
-/*				error()->void			*/
-/****************************************/
 auto error(const string& msg) -> void {
 	throw runtime_error(msg);
 }
-/****************************************/
-/*				class Token				*/
-/****************************************/
 class Token {
 public:
 	Token() :kind{ ' ' }, value{ 0.0 } {};
@@ -34,9 +17,7 @@ private:
 	double value;
 	char kind;
 };
-/****************************************/
-/*			class Token_stream			*/
-/****************************************/
+
 class Token_stream {
 public:
 	auto putback(Token) -> void;
@@ -46,10 +27,6 @@ private:
 	Token buffer;
 };
 
-/****************************************/
-/*	  Token_stream:: member function	*/
-/* putback()							*/
-/****************************************/
 auto Token_stream::putback(Token t) -> void {
 	if (full) {
 		error("putback()into a full buffer");
@@ -57,10 +34,7 @@ auto Token_stream::putback(Token t) -> void {
 	buffer = t;
 	full = true;
 }
-/****************************************/
-/*	  Token_stream:: member function	*/
-/* get()								*/
-/****************************************/
+
 auto Token_stream::get()->Token {
 	if (full) {
 		full = false;
@@ -95,17 +69,6 @@ auto Token_stream::get()->Token {
 Token_stream ts;
 auto expression() -> double;
 
-/****************************************/
-/*			primary()->	double			*/
-/*										*/
-/****************************************/
-/*
-	문법(grammar)을 수정하여 단항 마이너스(unary minus)를 허용해야 한다.
-	가장 단순한 수정은 Primary 규칙에 적용하는 것이다.기존 문법은 다음과 같다 :
-	Primary:
-	Number
-	"(" Expression ")"
-
 auto primary() -> double {
 	Token t = ts.get();
 
@@ -118,42 +81,15 @@ auto primary() -> double {
 	}
 	case '8':
 		return t.get_value();
-	default:
-		error("Bad Token");
-	}
-}
-	이를 다음과 같이 확장해야 한다:
-	코드
-	Primary:
-		Number
-		"(" Expression ")"
-		"−" Primary
-		"+" Primary
-*/
-auto primary() -> double {
-	Token t = ts.get();
-	switch (t.get_kind()) {
-	case '(': {
-		double d = expression();
-		if (t.get_kind() != ')')
-			error("')'expected");
-		t = ts.get();
-		return d;
-	}
-	case '8':
-		return t.get_value();
+	case '+':						//
+		return primary();
 	case '-':
 		return -primary();
-	case '+':
-		return +primary();
 	default:
 		error("Bad Token");
 	}
 }
 
-/****************************************/
-/*			term()->	double			*/
-/****************************************/
 auto term() -> double {
 	double left = primary();
 	Token t = ts.get();
@@ -178,9 +114,6 @@ auto term() -> double {
 	}
 }
 
-/****************************************/
-/*		expression()->	double			*/
-/****************************************/
 auto expression() -> double {
 	double left = term();
 	Token t = ts.get();
@@ -201,43 +134,22 @@ auto expression() -> double {
 	}
 }
 
-/****************************************/
-/*				main					*/
-/****************************************/
-auto main(void) -> int try {
-	/*
-	double val = 0;
+auto main(void) -> int
+try
+{
 	while (cin) {
 		cout << "> ";
 		Token t = ts.get();
-		if (t.kind == 'q')
-			break;
-		if (t.kind == ';')
-			cout << "= " << val << '\n';
-		else
-			ts.putback(t);
-		val = expression();
-	}
-	세미콜론(;)을 발견하면 즉시 expression()을 호출하지만 q에 대한 검사는 하지 않는다.
-	expression()은 먼저 term()을 호출하고,
-	term()은 primary()를 호출하며,
-	primary()는 q를 발견한다.
-	문자 q는 Primary가 아니므로 오류 메시지가 출력된다.
-	따라서 우리는 세미콜론을 처리한 후 q를 검사해야 한다.
-	이 과정에서 로직을 조금 더 단순화할 필요도 느꼈고,
-	그 결과 main() 함수는 다음과 같이 정리되었다:*/
-	while (cin) {
-		cout << '>' << ' '; // 프롬프트 출력. 프롬프트 변경
-		Token t = ts.get();
 		while (t.get_kind() == ';')
-			t = ts.get();
+			t = ts.get(); // 세미콜론 무시
 		if (t.get_kind() == 'q')
 			return 0;
 		ts.putback(t);
 		cout << "= " << expression() << '\n';
-
 	}
+	return 0;
 }
+
 catch (exception& e) {
 	cerr << e.what() << '\n';
 	return 1;

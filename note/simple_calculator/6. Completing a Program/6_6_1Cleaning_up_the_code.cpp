@@ -2,6 +2,13 @@
 import std;
 using namespace std;
 
+// Symbolic constants
+constexpr char Number = '8';
+constexpr char prompt = '>';
+constexpr char Print = ';';
+constexpr char Quit = 'q';
+constexpr char result = '=';
+
 auto error(const string& msg) -> void {
 	throw runtime_error(msg);
 }
@@ -45,7 +52,7 @@ auto Token_stream::get()->Token {
 	if (!(cin >> ch))
 		error("no input");
 	switch (ch) {
-	case ';':case 'q':
+	case Print:case Quit:
 	case '(':case ')':
 	case '+':case '-':
 	case '*':case '/':
@@ -59,7 +66,7 @@ auto Token_stream::get()->Token {
 		cin.putback(ch);
 		double val = 0;
 		cin >> val;
-		return Token{ '8',val };
+		return Token{ Number,val };
 	}
 	default:
 		error("Bad Token");
@@ -79,7 +86,7 @@ auto primary() -> double {
 			error("'('expected");
 		return d;
 	}
-	case  '8':
+	case  Number:
 		return t.get_value();
 	case '+':						//
 		return primary();
@@ -146,14 +153,14 @@ auto main(void) -> int
 try
 {
 	while (cin) {
-		cout << '>';
+		cout << prompt;
 		Token t = ts.get();
-		while (t.get_kind() == ';')
+		while (t.get_kind() == Print)
 			t = ts.get(); // 세미콜론 무시
-		if (t.get_kind() == 'q')
+		if (t.get_kind() == Quit)
 			return 0;
 		ts.putback(t);
-		cout << '=' << expression() << '\n';
+		cout << result << expression() << '\n';
 	}
 	return 0;
 }
