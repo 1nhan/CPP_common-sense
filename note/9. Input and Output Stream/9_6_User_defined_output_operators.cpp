@@ -5,20 +5,72 @@ using namespace std;
 enum class Month {
     jan = 1, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec
 };
+vector<string>month_tbl{
+    "none",
+    "jan",
+    "feb",
+    "mar",
+    "apr",
+    "may",
+    "jun",
+    "jul",
+    "aug",
+    "sep",
+    "oct",
+    "nov",
+    "dec" };
+
+auto to_int(Month m ) -> int
+{
+    return static_cast<int>(m);
+}
+
+auto operator++(Month m)->Month
+{
+    return m = (m == Month::dec) ? 
+        Month::jan : Month{ to_int(m) + 1 };
+}
+
 struct Year {
-    int year;
+    int y;
 };
 
 class Date {
 public:
-    int day() const;         // const 멤버: 객체를 변경할 수 없음
-    Month month() const;     // const 멤버: 객체를 변경할 수 없음
-    Year year() const;       // const 멤버: 객체를 변경할 수 없음
-    void add_day(int n);     // non-const 멤버: 객체를 변경할 수 있음
-    void add_month(int n);   // non-const 멤버: 객체를 변경할 수 있음
-    void add_year(int n);    // non-const 멤버: 객체를 변경할 수 있음
+    Date();
+    Date(Year y, Month m, int d) :yy{ y }, mm{ m }, dd{ d } {};
+    auto get_Year() const-> const Year { return yy; }
+    auto get_Month() const->const Month { return mm; }
+    auto get_Day() const-> const int{ return dd; }
 private:
-    Year y;
-    Month m;
-    int d; // 일(day)
+    Year yy{2000};
+    Month mm{Month::jan};
+    int dd{1};
 };
+
+auto operator<<(ostream& os, const Date& d)->ostream&
+{
+    return os << "( " 
+        << d.get_Year().y<<", "
+        << month_tbl[to_int(d.get_Month())]<<", "
+        << d.get_Day() 
+        << " )";
+}
+auto operator<<(ostream& os, const Date& d) -> ostream&
+{
+    return os << "( "
+        << d.get_Year().y << ", "
+        << month_tbl[to_int(d.get_Month())] << ", "
+        << d.get_Day()
+        << " )";
+}
+auto f() -> void
+{
+    Date tttt;
+    cout <<tttt;
+}
+
+auto main() -> int
+{
+    f();
+}
