@@ -1,6 +1,6 @@
 ﻿[![PPP3](https://img.shields.io/badge/PPP3-Programming%20Principles%20%26%20Practice-blue)](https://www.stroustrup.com/programming.html)
 [![Author](https://img.shields.io/badge/Bjarne%20Stroustrup-C%2B%2B%20Creator-blue)](https://www.stroustrup.com/)
-[![Language: C++](https://img.shields.io/badge/Language-C++latest-blue)](https://github.com/1nhan/CPP_common-sense/tree/main/cpplearn)
+[![Language: C++](https://img.shields.io/badge/Language-C++latest-blue)](https://en.cppreference.com/w/)
 
 This repository includes examples, exercises, and review notes from Inhan’s personal study and practice of Programming Principles and Practice Using C++ (PPP3).
 
