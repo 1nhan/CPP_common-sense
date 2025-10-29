@@ -1,7 +1,6 @@
 import std;
 using namespace std;
 
-
 auto error(const string& msg, const string name)
 {
 	throw runtime_error(msg + " " + name);
@@ -33,10 +32,6 @@ auto main() -> int
 
 }
 
-
-/*
-
-*/
 auto fill_from_file(vector<Point>&points, string& name) -> void 
 {
 	ifstream ist{ name };
