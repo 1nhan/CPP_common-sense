@@ -20,6 +20,9 @@ auto error(const string& msg)
 	throw runtime_error(msg);
 }
 
+/* Name 멤버 : string name;
+is_valid()로 유효성 검사.
+*/
 class Name {
 public:
 	Name(string var) :name{ var } {};
@@ -43,8 +46,6 @@ public:
 				cin >> a;
 			}
 			return false;
-			
-		
 		}
 		return true;
 	}
@@ -52,6 +53,9 @@ private:
 	string name{"Lee"};
 };
 
+/* Age 멤버 dobule age;
+* is_valid()함수로 유효성 검사.
+*/
 class Age {
 public:
 	Age(double val) :age{ val } {};
@@ -61,6 +65,9 @@ private:
 	double age{ 0 };
 };
 
+/* Name_pairs 멤버: Name name; Age age; 와 각 벡터
+* 각 타입별 set을 담당하는 read()와 출력담당하는 print()로 구성
+*/
 class Name_pairs {
 public:
 	class Invalid {};
@@ -92,13 +99,24 @@ auto Name_pairs::read_ages(double val) -> void
 	cin >> val;
 	age_vec.push_back(val);
 }
+ostream& operator<<(ostream& os, vector<Name>& v1) {
+	for (int i = 0; i < v1.size(); ++i)
+	{
+		os << v1[i];
+	}
+}
+ostream& operator<<(ostream& os, vector<Age>& v2) {
+
+}
 
 auto Name_pairs::print() -> void 
 {//(name[i], age[i])쌍을 한 줄에 하나씩 출력하는 연산.
 	if (name_vec.size() != age_vec.size())
 		error("size of Diference");
-	for(int i=0; i<name_vec.size();++i)
-		name_vec[i]
+	for (int i = 0; i < name_vec.size(); ++i) {
+		cout << "(name[" << i << "], age[" << i << "]):  ";
+		cout<<
+	}
 }
 
 

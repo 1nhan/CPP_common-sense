@@ -1,8 +1,14 @@
-#### ¾È³çÇÏ¼¼¿ä. 
-> ÇöÀç repository´Â CPPÀÇ PPP3::Programming Principles and Practice Using C++¿¡ ´ëÇÑ Á¦ ÇĞ½À ³ëÆ® ³»¿ëÀÌ ¾÷·Îµå µË´Ï´Ù!
-> ¾ğ¸®¾ó ¿£Áø ±â¹İÀÇ Å¬·¡½Ä °ÔÀÓ °³¹ßÀ» À§ÇØ C, C++ ÇÁ·Î±×·¡¹Ö¿¡ ÀÔ¹®Çß½À´Ï´Ù. Áö³­ µÎ´Ş À±¼º¿ìÀÇ ¿­Ç÷½Ã¸®Áî¸¦ ÅëÇØ C, 
-> C++¸¦ °øºÎÇß°í ÃÖ±Ù Programming Principles and Practice Using C++ (BJARNE STROUSTRUPTHE CREATOR OF C++)¸¦ °øºÎÇÏ°í ÀÖ½À´Ï´Ù.
-> ÇöÀç ¸®ÆÄÁöÅä¸®´Â PPP¿¡ ´ëÇÑ ¿¹Á¦¿Í Á¤¸®µÈ ³»¿ëÀ» ¾÷·ÎµåÇÒ ¿¹Á¤ÀÔ´Ï´Ù. ºÎÁ·ÇÑ ³»¿ëÀÌ³ª ¾Æ½¬¿î ³»¿ë¿¡ ´ëÇØ¼­´Â Microsoft Learn(CPP)¿¡¼­ Ãß°¡µÈ ³»¿ëÀ» ¾÷·ÎµåÇÏ°Ú½À´Ï´Ù.
-> PPP3¸¦ º»Áö µÎ´ŞÂë µÈ°Å °°Àºµ¥ ¾ÆÁ÷ Chapter 9¿¡ ´ëÇÑ °Íµµ ±×¸®°í ±× ÀÌÀüÀÇ ³»¿ëµµ ¿ÏÀüÇÏ°Ô ¸¶¹«¸®¸¦ ¸øÁöÀ¸°í ÀÖ½À´Ï´Ù. ÀÌ Ã¥ÀÇ ³»¿ëÀÌ ´Ü¼øÇÏ°Ô ÀĞ°í, µû¶óÇÏ´Â °ÍÀ» ³Ñ¾î¼­ ÇÁ·Î±×·¡¸Ó°¡ »ı°¢ÇØ¾ßÇÒ ÀıÂ÷³ª ±ÔÄ¢¿¡ ´ëÇÑ Ã¶ÇĞÀû ³»¿ëµµ Æ÷ÇÔµÇ¾î ÀÖ¾î µÇÁı´À¶ó ÁøÇàÀÌ Á»Ã³·³ ¾ÈµÇÁö¸¸ ³¡±îÁö ¿ÏÁÖÇØ¼­ PPP3¸¦ Á¦ ¸Ó¸® ¼Ó¿¡ Á¤¸®ÇÏ°Ú½À´Ï´Ù.
+ï»¿
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+![Language](https://img.shields.io/github/languages/top/1nhan/CPP_common-sense)
+## ğŸ“‚ í”„ë¡œì íŠ¸ êµ¬ì¡°
 
-°ü·Ã Ã¥ : [Programming Principles and Practice Using C++](https://www.stroustrup.com/programming.html)
+ì´ ì €ì¥ì†ŒëŠ” PPP3(C++ í”„ë¡œê·¸ë˜ë° ì›ì¹™ê³¼ ì‹¤ìŠµ) í•™ìŠµì„ ìœ„í•œ ì˜ˆì œ, ì—°ìŠµë¬¸ì œ, ë³µìŠµ ìë£Œ ë“±ì„ í¬í•¨í•˜ê³  ìˆìŠµë‹ˆë‹¤.
+
+[![Note](https://img.shields.io/badge/Note-ê°œì¸ë…¸íŠ¸-lightgrey)](https://github.com/1nhan/CPP_common-sense/tree/main/note)
+[![Drill](https://img.shields.io/badge/Drill-ë°˜ë³µí•™ìŠµ-red)](https://github.com/1nhan/CPP_common-sense/tree/main/Drill)
+[![Terms](https://img.shields.io/badge/Terms-ìš©ì–´ì •ë¦¬-orange)](https://github.com/1nhan/CPP_common-sense/tree/main/Terms)
+[![Review](https://img.shields.io/badge/Review-ë³µìŠµìë£Œ-yellow)](https://github.com/1nhan/CPP_common-sense/tree/main/Review)
+[![Exercises](https://img.shields.io/badge/Exercises-ì—°ìŠµë¬¸ì œ-green)](https://github.com/1nhan/CPP_common-sense/tree/main/Exercises)
+
+ê´€ë ¨ ì±… : [Programming Principles and Practice Using C++](https://www.stroustrup.com/programming.html)<br>
