@@ -2,7 +2,7 @@
 [![Author](https://img.shields.io/badge/Bjarne%20Stroustrup-C%2B%2B%20Creator-blue)](https://www.stroustrup.com/)
 [![Language: C++](https://img.shields.io/badge/Language-C++latest-blue)](https://en.cppreference.com/w/)
 
-이 저장소는 Inhan의 "Programming Principles and Practice Using C++ (PPP3)" 학습을 위한 개인 노트, 연습문제 풀이, 예제 코드를 모아 둔 공간입니다. 목표는 C++ 기초를 탄탄히 하고 실습을 통해 Unreal Engine 개발에 필요한 역량을 쌓는 것입니다.
+이 저장소는 Inhan의 "Programming Principles and Practice Using C++ (PPP3)" 학습을 위한 개인 노트, 연습문제 풀이, 예제 코드를 모아 둔 공간입니다. 목표는 C++ 기초를 탄탄히 하고 실습을 통해 게임 개발과 소프트웨어 개발에 필요한 역량을 쌓는 것입니다.
 
 #### 목차
 - [프로젝트 개요](#프로젝트-개요)
