@@ -15,5 +15,3 @@ This repository includes examples, exercises, and review notes from Inhan’s pe
 [![Philosophy](https://img.shields.io/badge/Code%20with-Common%20Sense%20for%20Cpp-yellow)](https://github.com/1nhan)
 [![Author](https://img.shields.io/badge/1nhan-yellow)](https://github.com/1nhan)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow)](https://github.com/1nhan/CPP_common-sense/blob/main/LICENSE)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow)](https://github.com/1nhan/CPP_common-sense/blob/main/LICENSE)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow)](https://github.com/1nhan/CPP_common-sense/blob/main/LICENSE)
