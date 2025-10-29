@@ -1,6 +1,8 @@
 ﻿
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/1nhan/CPP_common-sense/blob/main/LICENSE)
 [![Language: C++](https://img.shields.io/badge/Language-C++17-blue)](https://github.com/1nhan/CPP_common-sense)
+[![PPP3](https://img.shields.io/badge/PPP3-Programming%20Principles%20%26%20Practice-blue)](https://www.stroustrup.com/programming.html)
+[![Author](https://img.shields.io/badge/Bjarne%20Stroustrup-C%2B%2B%20Creator-purple)](https://www.stroustrup.com/)
 
 이 저장소는 PPP3(C++ 프로그래밍 원칙과 실습) 학습을 위한 예제, 연습문제, 복습 자료 등을 포함하고 있습니다.
 
@@ -12,10 +14,7 @@
 └─[![Exercises](https://img.shields.io/badge/Exercises-green)](https://github.com/1nhan/CPP_common-sense/tree/main/Exercises)<br>
 
 
-[![PPP3](https://img.shields.io/badge/PPP3-Programming%20Principles%20%26%20Practice-blue)](https://www.stroustrup.com/programming.html)
-[![Author](https://img.shields.io/badge/Bjarne%20Stroustrup-C%2B%2B%20Creator-purple)](https://www.stroustrup.com/)
 [![Focus](https://img.shields.io/badge/Focus-Fundamentals%20%26%20Practice-green)](https://www.stroustrup.com/programming.html)
 [![Style](https://img.shields.io/badge/Style-Object%20Oriented%20%26%20Generic-orange)](https://www.stroustrup.com/programming.html)
-[![Edition](https://img.shields.io/badge/Edition-3rd%20Edition-yellow)](https://www.stroustrup.com/programming.html)
 
 관련 책 : [Programming Principles and Practice Using C++](https://www.stroustrup.com/programming.html)<br>
