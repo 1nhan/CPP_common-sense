@@ -23,6 +23,8 @@ using namespace std;
 auto error(const string& msg) {
     throw runtime_error(msg);
 }
+
+
 auto keep_window_open() -> void {
     cout << "Welcome to our simple calculator. Please enter expressions using floating + - * / point numbers."
         <<'\n';
