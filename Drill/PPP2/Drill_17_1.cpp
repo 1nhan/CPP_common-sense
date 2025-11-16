@@ -1,7 +1,7 @@
 /********************************************************************************************
 *
-*	Drill_17
-*	
+*	Drill_17_1 자유 저장 영역에 할당한 배열에 대한 이해
+*
 *	1. new를 이용해서 자유저장 영역에 int 10개를 저장하는 배열을 할당하자.
 *	2. int 10개의 값을 cout에 출력
 *   3. delete[]를 이용해서 배열을 해제하자.
@@ -12,40 +12,62 @@
 *	8. 자유 저장 영역에 int 20개를 저장하는 배열을 할당하고, 그 값을 100, 101, 102,...로 초기화한 후 값을 출력.
 *   9. 할당한 배열을 해제했는가
 *  10. 5번과 6, 8번 문제를 배열 대신 벡터를 이용해 풀고, print_array() 대신 print_vector()를 정의
-* 
+*
 *********************************************************************************************/
 
 #include <iostream>
 using namespace std;
 
-class my_array {
+constexpr int q6 = 11;
+constexpr int q8 = 20;
+constexpr double initial_value = 100;
+
+class vector {
 	int sz;
-	int* elem;
+	double* elem;
+
 public:
-	my_array(int s)
-		:sz{s}, elem{new int[s]}
-	{ 
-		for (int i = 0; i < s; ++i)
-			elem[s] = 0;
+	vector(int s)
+		:sz{ s }, elem{ new double[sz] }
+	{
+		for (int i = 0; i < sz; ++i)
+			elem[i] = 0;
 	}
-	~my_array() { delete[] elem; }
+	~vector()
+	{
+		delete[]elem;
+		cout << "시스템 정상 종료" << '\n';
+	}
 
-	
-	int size() const { return sz; }
-	void print_array10(ostream& os, int* a);
-
+	int size() { return sz; }
+	double get(int s) const { return elem[s]; }
+	void set(int n, double v) { elem[n] = v; }
 };
 
-void my_array::print_array10(ostream& os, int* a)
+ostream& print_vector(ostream& os, vector& v)
 {
-	for (int i = 0; i < 10; ++i)
-		os << elem[i] << '\n';
+	for (int i = 0; i < v.size(); ++i)
+		cout << "v [ " << i << " ] = " << v.get(i) << '\n';
+	return os;
 }
 
-auto main()
+int main()
 {
-	my_array ten(10);
-	my_array eleven(11);
+	vector vman1(q6);
+	vector vman2(q8);
 
-	
+	for (int i = 0; i < q6; ++i)
+	{
+		vman1.set(i, initial_value + i);
+	}
+	for (int i = 0; i < q8; ++i)
+	{
+		vman2.set(i, initial_value + i);
+	}
+
+	print_vector(cout, vman1);
+	print_vector(cout, vman2);
+
 }
+
+
