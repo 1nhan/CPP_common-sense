@@ -23,6 +23,9 @@ using namespace std;
 * - Resize
 * - Reserve
 * - Pushback
+* 
+* - clear
+* - empty
 * **
 * **MEMBER VARIABLE**
 * - elem
@@ -223,4 +226,21 @@ public:
 		elem[sz] = d;
 		++sz;
 	}
+
+	/**
+	* @brief	empty
+	* - 사이즈가 0인지 아닌지 확인해주는 함수
+	* @note
+	* - sz==0이면 true 아니면 false을 반환
+	* 
+	*/
+	bool empty() const { return sz==0; }
+
+	void clear() {
+		for (int i = 0; i < sz; ++i)
+			elem[i].~T();
+
+		sz = 0;
+	}
+
 };
