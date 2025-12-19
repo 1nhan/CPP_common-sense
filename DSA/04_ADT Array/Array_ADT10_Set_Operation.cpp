@@ -1,10 +1,7 @@
 /**
 *	@brief	ADT10에 변경사항
 *	@note	함수 추가
-*	- 1. union()
-*	- 2. intersection()
-*	- 3. differecne()
-*	- 4.  
+*	- 1. menu()
 */
 #include<iostream>
 #include<stdlib.h>
