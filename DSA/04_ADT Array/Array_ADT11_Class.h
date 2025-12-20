@@ -41,8 +41,8 @@ public:
 	void	find_single_missing_number_2();
 	void	find_multiple_missing_number();
 	void	find_hashing				();
+	void	Duplicate					();
 };
-
 
 template<typename T> void	Array<T>::find_single_missing_number_1	()
 {
@@ -82,4 +82,17 @@ template<typename T> void	Array<T>::find_hashing					()
 	for (int i = 0; i < max(); ++i)		Hashing_Table[A[i]]++;
 	for (int i = A[0]; i < max(); ++i)
 		if (H[i] == 0)	cout <<			i;
+}
+
+template<typename T> void	Duplicate()
+{
+	T lastDuplicate{};
+	for (int i = 0; i < size - 1; ++i)
+	{
+		if (A[i] == A[i + 1] && A[i] != lastDuplicate)
+		{
+			cout <<										A[i];
+			lastDuplicate								= A[i];
+		}
+	}
 }

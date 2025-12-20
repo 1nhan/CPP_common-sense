@@ -209,7 +209,7 @@ template<typename T>void		Array<T>::Reverse1				()
 		B[j] = A[i];
 	for (int i = 0; i < length; ++i)
 		A[i] = B[i];
-	free(B);
+	delete[] B;
 }
 template<typename T>void		Array<T>::Reverse2				()
 {
@@ -373,22 +373,22 @@ void							menu							()
 				x						= 0,
 				sz						= 0;
 	string		menu_screen				= 
-				R"(+----------------------------------------+
-				   |										|
-				   |					Menu				|
-				   |										|
-				   |				1. Insert				|
-				   |				2. Delete				|
-				   |				3. Search				|
-				   |				4. Sum					|
-				   |				5. Average				|
-				   |				6. Min && Max			|
-				   |				7. Display				|
-				   |				8. Exit					|
-				   |										|
-				   |		*** Enter your choice ***		|
-				   |										|
-				   +----------------------------------------+)";
+				R"(+------------------------------------------+
+				   |										  |
+				   |					Menu				  |
+				   |										  |
+				   |				1. Insert				  |
+				   |				2. Delete				  |
+				   |				3. Search				  |
+				   |				4. Sum					  |
+				   |				5. Average				  |
+				   |				6. Min && Max			  |
+				   |				7. Display				  |
+				   |				8. Exit					  |
+				   |										  |
+				   |		*** Enter your choice ***		  |
+				   |										  |
+				   +------------------------------------------+)";
 	cout << "Enter Size of Array ";
 	cin>>		sz;
 	Array<T>*	arr1					= new Array[sz];
