@@ -48,7 +48,7 @@ template<typename T> void	Array<T>::find_single_missing_number_1	()
 {
 	T sum												= 0;
 	T sum_fomula										= size * (size + 1) / 2;
-	for (int i = 0; i < size; ++i)					sum += A[i];
+	for (int i = 0; i < size; ++i)						sum += A[i];
 	T missing_number									= sum_fomula - sum;
 	cout <<												missing_number;
 }

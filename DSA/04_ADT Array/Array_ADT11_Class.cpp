@@ -206,7 +206,7 @@ template<typename T>void		Array<T>::Reverse1				()
 	int* B								= new Array[size];
 
 	for (int i = length - 1, j = 0; i >= 0; i--, j++)
-		B[j] = A[i];
+			B[j] = A[i];
 	for (int i = 0; i < length; ++i)
 		A[i] = B[i];
 	delete[] B;
@@ -250,8 +250,8 @@ template<typename T>void		Array<T>::InsertSort			(T x)
 template<typename T> T			Array<T>::isSorted				()
 {
 	for (int i = 0; i < length - 1; ++i)
-		if (A[i] > A[i + 1]) return 0;
-	return 1;
+		if (A[i] > A[i + 1])			return 0;
+										return 1;
 }
 /**
 * @brief	Rearrange
