@@ -9,21 +9,21 @@
 
 ### Contents
 1. Recursion
-	a. What is Recursion? 
-	a. Tracing Recursion
-	a. Head Recursion
-	a. Tail Recursion
-	a. Stack used in Recursion 
-	a. Time Complexcity
-	a. Tree Recursion
-	a. Indirect Recursion 
-	a. Nested Recursion
-	a. Factorial 
-	a. Exponentiation
-	a. Taylor Series
-	a. Fibonacci Series
-	a. Combination Fomula
-	a. Tower of Hanoi
-2. Array ADT
-	a. Arrays in Compilers
-	b. -
+	a. What is Recursion?			</br>
+	a. Tracing Recursion			</br>
+	a. Head Recursion				</br>
+	a. Tail Recursion				</br>
+	a. Stack used in Recursion 		</br>
+	a. Time Complexcity				</br>
+	a. Tree Recursion				</br>
+	a. Indirect Recursion 			</br>
+	a. Nested Recursion				</br>
+	a. Factorial 					</br>
+	a. Exponentiation				</br>
+	a. Taylor Series				</br>
+	a. Fibonacci Series				</br>
+	a. Combination Fomula			</br>
+	a. Tower of Hanoi				</br>
+2. Array ADT						</br>
+	a. Arrays in Compilers			</br>
+	b. 
