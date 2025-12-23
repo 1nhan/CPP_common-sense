@@ -325,6 +325,7 @@ Type TaylorSeries__Recursion1(x, term)
 	           +Exponentiation__Recursion(x, term)/Factorial__Recursion(term)
 }
 
+
 /*
 Tracing TaylorSeries(3,3)
  ¦¦¦¡ return TaylorSeries(3,2) + Power(3,3)/Factorial(3)

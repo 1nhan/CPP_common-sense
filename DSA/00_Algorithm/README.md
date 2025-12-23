@@ -46,12 +46,13 @@
 		  : Right Rotate                                                            </br>
 - Inserting in a sorted array														</br>
 - Checking if an Array is sorted													</br>
-- Arranging all negative elemnets on Left side, Positive elements on Right side     </br>
-- Merge : Set Operations                                                            </br>
-        : Union			                                                            </br>
-        : Intersection                                                              </br>
-        : Difference                                                                </br>
-        : Set membership                                                            </br>
+- Arranging all negative elemnets on Left side, 
+                Positive elements on Right side     </br>
+- Merge   : Set Operations                                                            </br>
+          : Union			                                                            </br>
+          : Intersection                                                              </br>
+          : Difference                                                                </br>
+          : Set membership                                                            </br>
 - Find Missing Element																</br>
 - Finding Duplicate Elements														</br>
 - Find a pair with sum k (a + b = k)												</br>
