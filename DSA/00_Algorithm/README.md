@@ -10,7 +10,7 @@
 
 ### Contents
 
-#### 1. Recursion
+#### 1. [Recursion](01_Recursion/Recursion.md)
 	
 - What is Recursion?			                                                    </br>
 - Tracing Recursion			                                                        </br>
@@ -28,7 +28,7 @@
 - Combination Fomula			                                                    </br>
 - Tower of Hanoi				                                                    </br>
 
-#### 2. Array ADT						         
+#### 2. [Array ADT](02_Array__ADT/Array__ADT.md)						         
 	
 - Arrays in Compilers			                                                    </br>
 - Row major mapping	                                                                </br>
@@ -58,7 +58,7 @@
 - Find a pair with sum k (a + b = k)												</br>
 - Finding MAX and Min in a single scan                                              </br>
 
-#### 3. String                                    
+#### 3. [String](03_String/String.md)                                    
 	
 - ASCII Codes									                                    </br>
 - Length of a String							                                    </br>
@@ -73,7 +73,7 @@
 - Check for Anagram                                                                 </br>
 - Permutation of a String						                                    </br>
 
-#### 4. Matrix
+#### 4. [Matrix](03_Matrix/Matrix.md)
 	
 - Diagonal Matrix                                                                   </br>
 - Lower Triangular Matrix                                                           </br>
