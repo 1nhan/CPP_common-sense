@@ -454,7 +454,7 @@ Tracing Fibonacci_Series__Recursion3(3)
 > Memoization에 대해<br>
 >> 1. 만들어진 배열을 이용해 선형구조로 바꿔서 시간복잡도를 개선하는 최적화 기법
 ---
-#### Combination Fomula
+#### Combination Formula
 : nCr = n! / ((r!)(n-r)!)
 ```
 Type Factorial__Recursion(number);
