@@ -1,7 +1,7 @@
-#### 4. Matrix
+### 4. Matrix
 	
 ---
-- Diagonal Matrix                                                                   </br>
+#### Diagonal Matrix                                                                   </br>
 ```
  M    1   2   3   4   5
     +---+---+---+---+---+
@@ -34,7 +34,7 @@ Get(int A[], i, j)
 
 ---
 
-- Lower Triangular Matrix                                                           </br>
+#### Lower Triangular Matrix                                                           </br>
 ```
 M   j  1     2     3     4     5
 i   +-----+-----+-----+-----+-----+
@@ -77,7 +77,7 @@ A   | A11 | A21 | A31 | A41 | A51 | A22 | A32 | A42 | A52 | A33 | A43 | A53 | A4
 
 ```
 ---
-- Upper Triangular Matrix                                                           </br>
+#### Upper Triangular Matrix                                                           </br>
 ```
 M      1     2     3     4     5
     +-----+-----+-----+-----+-----+
@@ -119,7 +119,7 @@ A   | A11 | A21 | A22 | A31 | A32 | A33 | A41 | A42 | A43 | A44 | A51 | A52 | A5
     index(A[i][j]) = [j * (j-1)/2] + (i-1)
 ```
 ---
-- Symmetric Matrix                                                                  </br>
+#### Symmetric Matrix                                                                  </br>
 ```
 M      1     2     3     4     5
     +-----+-----+-----+-----+-----+
@@ -159,7 +159,7 @@ A   | A11 | A12 | A13 | A14 | A15 | A22 | A23 | A24 | A25 | A33 | A34 | A35 | A4
  
 ```
 ---
-- Tridiagonal Matrix                                                                </br>
+#### Tridiagonal Matrix                                                                </br>
 ```
 M      1     2     3     4     5
     +-----+-----+-----+-----+-----+
@@ -195,7 +195,7 @@ A   | A21 | A32 | A43 | A54 | A11 | A22 | A33 | A44 | A55 | A12 | A23 | A34 | A4
 
 ```
 ---
-- Band Matrix                                                                      </br>
+#### Band Matrix                                                                      </br>
 ```
 M      1     2     3     4     5
     +-----+-----+-----+-----+-----+
@@ -217,7 +217,7 @@ M      1     2     3     4     5
 
 ```
 ---
-- Toeplitz Matrix                                                                   </br>
+#### Toeplitz Matrix                                                                   </br>
 ```
 M      1     2     3     4     5
     +-----+-----+-----+-----+-----+
@@ -260,7 +260,7 @@ A   | A00 | A01 | A02 | A03 | A04 | A05 | A06 | A07 | A08 |
 
 
 ---
-- Sparse Matrix
+#### Sparse Matrix
 ```
 M      1     2     3     4     5     6     7     8     9
     +-----+-----+-----+-----+-----+-----+-----+-----+-----+
