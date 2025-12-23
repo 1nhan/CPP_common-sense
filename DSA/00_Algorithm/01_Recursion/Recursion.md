@@ -1,7 +1,7 @@
 
 ### Recursion
 
-> What is Recursion? 
+#### What is Recursion? 
 ```
 Type Recursion_Function()
 {
@@ -14,7 +14,7 @@ Type Recursion_Function()
 ```
 ------
 
-> Tracing Recursion
+#### Tracing Recursion
 
 ```
 Type Recursion_Function()
@@ -40,7 +40,7 @@ Tracing Recursion
 ```
 ------
 
-> Head Recursion
+#### Head Recursion
 ```
 Type Recursion_Function()
 {
@@ -60,7 +60,7 @@ Calling Time(Ascending) -> 3, 2, 1, 0(x);
 */
 ```
 
-> Tail Recursion
+#### Tail Recursion
 ```
 Type Recursion_Function()
 {
@@ -80,7 +80,7 @@ Returning Time(Descending) -> 1, 2, 3;
 */
 ```
 ------
-> Stack used in Recursion
+#### Stack used in Recursion
 
 ```
 This is Memory Layout.
@@ -108,7 +108,7 @@ This is Memory Layout.
 - Stack: 함수 호출 시마다 새로운 Stack Frame 생성
 - Code : 실제 함수 코드가 저장된 공간
 ---
-> Time Complexcity
+#### Time Complexcity
 ```
 Type Recursion_Function()
 {
@@ -130,7 +130,7 @@ Type Recursion_Function()
 ```
 ---
 
-> Tree Recursion
+#### Tree Recursion
 ```
 Type Tree__Recursion(number)
 {
@@ -171,7 +171,7 @@ Tracing Tree__Recursion(3)
 */
 ```
 --- 
-> Indirect Recursion
+#### Indirect Recursion
 ```
 Type Indirect__Recursion_A(number)
 {
@@ -200,7 +200,7 @@ Tracing Indirect__Recursion_A(3)
 */
 ```
 ---
-> Nested Recursion
+#### Nested Recursion
 ```
 Type Nested__Recursion(number)
 {
@@ -226,7 +226,8 @@ Tracing Nested__Recursion(3)
 */
 ```
 ---
->Factorial : n!
+#### Factorial
+: n!
 ```
 Type Factorial__Recursion(number)
 {
@@ -239,7 +240,8 @@ Tracing Factorial__Recursion(3)
 */
 ```
 ---
->Exponentiation : m^n^ = m* m * m...* n times;
+#### Exponentiation
+: m^n^ = m* m * m...* n times;
 ```
 Type Exponentiation__Recursion1(number, Power)
 {
@@ -313,7 +315,8 @@ Tracing Exponentiation__Recursion3(3, 3)
 
 ---
 
->Taylor Series : e^x^ = x^0^/0! + x^1^/1! + x^2^/2! + ... + n times
+#### Taylor Series
+: e^x^ = x^0^/0! + x^1^/1! + x^2^/2! + ... + n times
 ```
 Type Factorial__Recursion(k);
 Type Exponentiation__Recursion(x, k);
@@ -384,7 +387,8 @@ Tracing TaylorSeries(3,3), S=1
 > 2. 위 식을 코드로 일반화시 s = 1 + x/n * s
 ---
 
->Fibonacci Series : fib(n) = 0 + 1 + 1 + 2 + 3 + ... + (fib(n-2)+fib(n-1))
+#### Fibonacci Series
+: fib(n) = 0 + 1 + 1 + 2 + 3 + ... + (fib(n-2)+fib(n-1))
 ```
 Type Fibonacci_Series__Recursion1(number)
 {
@@ -450,8 +454,8 @@ Tracing Fibonacci_Series__Recursion3(3)
 > Memoization에 대해<br>
 >> 1. 만들어진 배열을 이용해 선형구조로 바꿔서 시간복잡도를 개선하는 최적화 기법
 ---
-
->Combination Fomula : nCr = n! / ((r!)(n-r)!)
+#### Combination Fomula
+: nCr = n! / ((r!)(n-r)!)
 ```
 Type Factorial__Recursion(number);
 
@@ -500,7 +504,7 @@ EX . 2	C(3,2) = C(	 2,	 1) + C(  2, 2)
 */
 ```
 ---
->Tower of Hanoi :
+#### Tower of Hanoi
 ```
 Type Tower_of_Hanoi(n, from, to, aux)
 {
