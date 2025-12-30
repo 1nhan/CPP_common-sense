@@ -1,8 +1,3 @@
-/*
-    Display function -> Recursive Function
-    
-*/
-
 #include<stdio.h>
 #include<stdlib.h>
 struct Node
@@ -35,18 +30,18 @@ void Create(int A[], int n)
 
 void Display(struct Node* p)
 {
-	if(p)
+	while (p)
 	{
-		Display(p->next);
-        printf("%d ", p->data);
+		printf("%d ", p->data);
+		p = p->next;
 	}
- }
-
-int main()
-{
-    printf("Recursive Version\n");
-	int A[] = { 3,5,7,9,13 };
-	Create(A, 5);
-	Display(first);
-	return 0;
+	printf("\n");
 }
+
+// int main()
+// {
+// 	int A[] = { 3,5,7,9,13 };
+// 	Create(A, 5);
+// 	Display(first);
+// 	return 0;
+// }
